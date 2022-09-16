@@ -1,0 +1,224 @@
+function shuffleArray(array){
+    for (var i = array.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+    }
+    return array;
+}
+
+function createTest(data){
+
+    data = shuffleArray(data);
+
+    for(let i=0; i<data.length; i++){
+
+        let questionDiv = document.createElement('div');
+        questionDiv.className = 'question-div';
+        document.querySelector('.main-test').appendChild(questionDiv);
+
+        if(Object.hasOwn(data[i], 'img')){
+            let questionImage = document.createElement('img');
+            questionImage.className = 'question-img';
+            questionImage.src = data[i].img;
+            questionDiv.appendChild(questionImage);
+        }
+
+        let questionTitle = document.createElement('div');
+        questionTitle.className = 'question-title';
+        questionDiv.appendChild(questionTitle);
+
+        let questionTitleText = document.createElement('div');
+        questionTitleText.className = 'question-title-text';
+        questionTitleText.textContent = (i+1) + '- ' + data[i].text;
+        questionTitle.appendChild(questionTitleText);
+
+        let answersDiv = document.createElement('div');
+        answersDiv.className = 'answers-div';
+        questionDiv.appendChild(answersDiv);
+
+        var answerArray = shuffleArray(data[i].answers);
+
+        for(let j=0; j<data[i].answers.length; j++){
+            let answer = document.createElement('div');
+            answer.className = 'answer';
+            if(Array.isArray(data[i].right)){
+                answer.innerHTML = '<input type="checkbox" value="' + data[i].answers[j] + '" name="answer-' + (i+1) + '">' + data[i].answers[j];
+            }
+            else{
+                answer.innerHTML = '<input type="radio" value="' + data[i].answers[j] + '" name="answer-' + (i+1) + '">' + data[i].answers[j];
+            }
+            
+            answersDiv.appendChild(answer);
+        }
+    }
+
+    let submitButton = document.createElement('div');
+    submitButton.className = 'submit-button';
+    submitButton.onclick = ()=>{
+        let items = document.querySelectorAll('.answers-div');
+        let score = 0;
+
+        let countChecked = 0;
+        for(let i=0; i<items.length; i++){
+            let check = 0;
+            for(let j=0; j<items[i].querySelectorAll('input').length; j++){
+                if(items[i].querySelectorAll('input')[j].checked){
+                    check = 1;
+                }
+            }
+            if(check == 1){
+                countChecked++;
+            }
+            else{
+                $(items[i]).parent()[0].scrollIntoView({behavior: "smooth"});
+                break;
+            }
+        }
+        if(countChecked == items.length){
+            for(let i=0; i<items.length; i++){
+                let type = items[i].querySelector('input').type;
+                if(type == "radio"){
+                    for(let j=0; j<items[i].querySelectorAll('.answer').length; j++){
+                        if(items[i].querySelectorAll('.answer')[j].querySelector('input').checked){
+                            if(items[i].querySelectorAll('.answer')[j].querySelector('input').value == data[i].right){
+                                score++;
+                            }
+                            else{
+                                console.log('Risposta ' + (i+1) + ' errata');
+                                $(items[i]).parent()[0].style.backgroundColor = 'rgba(218, 17, 17, 0.1)';
+                            }
+                            break;
+                        }
+                    }
+                }
+                if(type == "checkbox"){
+                    var answers = [];
+                    for(let j=0; j<items[i].querySelectorAll('.answer').length; j++){
+                        if(items[i].querySelectorAll('.answer')[j].querySelector('input').checked){
+                            answers.push(items[i].querySelectorAll('.answer')[j].querySelector('input').value);
+                        }
+                    }
+                    if(answers.length > 0){
+                        answers = answers.sort();
+                        data[i].right = data[i].right.sort();
+                        if((Array.isArray(answers) && Array.isArray(data[i].right))
+                        && (answers.length == data[i].right.length)
+                        && (answers.every(function(element, index){
+                            return element === data[i].right[index];
+                        }))){
+                            score++;
+                        }
+                        else{
+                            console.log('Risposta ' + (i+1) + ' errata');
+                        }
+                    }
+                }
+            }
+            console.log("Punteggio: " + score);
+            viewSolutions(score, items.length);
+        }
+    }
+    document.querySelector('.main-test').appendChild(submitButton);
+
+    let submitButtonText = document.createElement('div');
+    submitButtonText.className = 'submit-button-text';
+    submitButtonText.textContent = 'Invia test';
+    submitButton.appendChild(submitButtonText);
+}
+
+function viewSolutions(score, all){
+    window.scrollTo(0, 0);
+
+    document.querySelector('.submit-button').remove();
+
+    var space = document.createElement('div');
+    space.style.width = '100%';
+    space.style.height = '100px';
+    document.querySelector('.main-test').appendChild(space);
+
+    var resultDiv = document.createElement('div');
+    resultDiv.className = 'result-div';
+    resultDiv.textContent = score + '/' + all;
+    $(resultDiv).insertBefore(document.querySelector('.question-div'));
+
+}
+
+document.querySelector('.menu > :first-child').onclick = ()=>{
+    document.querySelector('.main').remove();
+
+    let mainTest = document.createElement('div');
+    mainTest.className = 'main-test';
+    document.body.appendChild(mainTest);
+
+
+    var array = [];
+    for(let i=0; i<autovalues.length; i++){
+        array = array.concat(autovalues[i]);
+    }
+    createTest(array);
+}
+
+document.querySelector('.menu > :last-child').onclick = ()=>{
+    document.querySelector('.main').remove();
+
+    let mainTest = document.createElement('div');
+    mainTest.className = 'main-test';
+    document.body.appendChild(mainTest);
+
+    var menuCustom = document.createElement('div');
+    menuCustom.className = 'menu-custom';
+    document.body.appendChild(menuCustom);
+
+    var menuCustomTitle = document.createElement('div');
+    menuCustomTitle.className = 'menu-custom-title';
+    menuCustomTitle.textContent = 'Seleziona le autovalutazioni da includere:';
+    menuCustom.appendChild(menuCustomTitle);
+
+    var menuContent = document.createElement('div');
+    menuContent.className = 'menu-content';
+    menuCustom.appendChild(menuContent);
+
+    for(let i=0; i<18; i++){
+        var element = document.createElement('div');
+        element.className = 'content-element';
+        element.innerHTML = '<input type="checkbox" name="elements" value="' + (i+1) + '">' + (i+1);
+        menuContent.appendChild(element);
+    }
+
+    var menuButton = document.createElement('div');
+    menuButton.className = 'menu-button';
+    menuButton.onclick = ()=>{
+        let arr = document.querySelectorAll('.content-element > input');
+        let checked = [];
+        for(let i=0; i<arr.length; i++){
+            if(arr[i].checked){
+                checked.push(arr[i].value);
+            }
+        }
+        document.querySelector('.menu-custom').remove();
+        if(checked.length > 0){
+            var array = [];
+            var tests = checked;
+            var autoArray = [];
+            for(let i=0; i<tests.length; i++){
+                autoArray.push(parseInt(tests[i]));
+            }
+            autoArray.sort(function(a, b) {
+                return a - b;
+            });
+            for(let i=0; i<autoArray.length; i++){
+                array = array.concat(autovalues[autoArray[i] - 1]);
+            }
+            createTest(array);
+        }
+    }
+    menuCustom.appendChild(menuButton);
+
+    var menuButtonText = document.createElement('div');
+    menuButtonText.className = 'menu-button-text';
+    menuButtonText.textContent = 'Inizia';
+    menuButton.appendChild(menuButtonText);
+
+}
