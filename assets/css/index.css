@@ -181,6 +181,10 @@ html, body{
         font-size: 8vw;
     }
 
+    .question-div{
+        width: 80vw;
+    }
+
     .question-title{
         font-size: 4vw;
     }
