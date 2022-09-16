@@ -397,7 +397,7 @@ var autovalues = [
                 'L\'intensità sonora varia proporzionalmente al quadrato della distanza dalla sorgente',
                 'La distanza raggiungibile dall\'onda varia proporzionalmente al quadrato dell\'intensità sonora'
             ],
-            right: 'La distanza raggiungibile dall\'onda varia proporzionalmente al quadrato dell\'intensità sonora'
+            right: 'L\'intensità sonora varia proporzionalmente al quadrato della distanza dalla sorgente'
         },
         q2 = {
             text: 'Un suono viene percepito con intensità 100 W/m^2 a distanza 1 metro. Quale sarà la sua intensità percepita a distanza 5 metri?',
@@ -454,7 +454,7 @@ var autovalues = [
                 '20 Pa',
                 'Non abbiamo sufficienti elementi per rispondere'
             ],
-            right: '343.85 m/s'
+            right: 'Non abbiamo sufficienti elementi per rispondere'
         },
         q6 = {
             text: 'A livello del mare, a che temperatura il suono viaggia nell\'aria se ha una velocità di a 331.45 m/s?',
@@ -623,8 +623,8 @@ var autovalues = [
                 '3622.72 m',
                 '3438.5 m',
                 '2498.1 m',
-                '1719.25',
-                '1718.25',
+                '1719.25 m',
+                '1718.25 m',
                 'Non abbiamo sufficienti elementi per rispondere'
             ],
             right: '1719.25 m'
