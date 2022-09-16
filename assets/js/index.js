@@ -1,3 +1,5 @@
+var len;
+
 function shuffleArray(array){
     for (var i = array.length - 1; i > 0; i--) {
         var j = Math.floor(Math.random() * (i + 1));
@@ -11,9 +13,10 @@ function shuffleArray(array){
 function createTest(data){
 
     data = shuffleArray(data);
+    
 
-    for(let i=0; i<data.length; i++){
-
+    for(let i=0; i<len; i++){
+        console.log(len)
         let questionDiv = document.createElement('div');
         questionDiv.className = 'question-div';
         document.querySelector('.main-test').appendChild(questionDiv);
@@ -146,6 +149,7 @@ function viewSolutions(score, all){
 }
 
 document.querySelector('.menu > :first-child').onclick = ()=>{
+    len = document.querySelector('.cell').textContent;
     document.querySelector('.main').remove();
 
     let mainTest = document.createElement('div');
@@ -161,6 +165,7 @@ document.querySelector('.menu > :first-child').onclick = ()=>{
 }
 
 document.querySelector('.menu > :last-child').onclick = ()=>{
+    len = document.querySelector('.cell').textContent;
     document.querySelector('.main').remove();
 
     let mainTest = document.createElement('div');
