@@ -1240,10 +1240,12 @@ var autovalues = [
         q14 = {
             text: 'Il Quizzone finale: quali fra queste affermazioni sulla coclea sono vere?',
             answers: [
+                'La staffa è in contatto con la finestra ovale',
                 'La coclea è piena di un liquido',
                 'Nella coclea, i canali superiore, inferiore e mediano sono collegati',
                 'La vibrazione che entra nella coclea si esaurisce al suo interno dopo che viene recepita',
                 'La membrana tettoria copre la membrana basilare',
+                'La vibrazione entra nella coclea dal canale superiore (rampa vestibulare)',
                 'La membrana basilare è più spessa vicino all\'orecchio medio',
                 'La membrana basilare è più spessa vicino l\'elicotrema (il centro della chiocciola)',
                 'Nell\'organo di Corti ci sono circa 2.000 ciglia',
@@ -2767,7 +2769,7 @@ var autovalues = [
             right: 'N'
         },
         q8 = {
-            text: 'Quanti Banchi sono definibili nel MIDI?',
+            text: 'Quale fra i seguenti indica il livello di astrazione per rappresentare le varie voci di un brano?',
             answers: [
                 'Sequencer',
                 'Canali',
@@ -2887,7 +2889,7 @@ var autovalues = [
             right: 'Nessuno dei precedenti'
         },
         q19 = {
-            text: 'Se i primi 4 bit, esclusi quelli di sincronizzazione, di un messaggio MIDI sono uguali a 0111, allora si avrà un...',
+            text: 'I SysEx...',
             answers: [
                 'Gestiscono l\'attivazione dei sistemi MIDI',
                 'Gestiscono l\'attivazione esclusiva di un device',
