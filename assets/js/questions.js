@@ -1638,5 +1638,598 @@ var autovalues = [
                 'il masking tone è variabile',
             ]
         }
+    ],
+    auto10 = [
+        q1 = {
+            text: 'Individuare le affermazioni vere fra quelle in elenco:',
+            answers: [
+                'E\' sempre meglio effettuare la fase di processing sul dato digitalizzato, perché non c\'è rischio di danneggiamento irreversibile',
+                'Alcuni difetti nel dato registrato sono risolvibili più facilmente sul supporto fisico piuttosto che nella sua versione digitalizzata',
+                'La rappresentazione analogica è più adatta alla rappresentazione di suoni molto complessi',
+                'Le apparecchiature di riproduzione di un audio analogico sono poco sofisticate e si trovano sempre facilmente in commercio'
+            ],
+            right: [
+                'Alcuni difetti nel dato registrato sono risolvibili più facilmente sul supporto fisico piuttosto che nella sua versione digitalizzata',
+                'La rappresentazione analogica è più adatta alla rappresentazione di suoni molto complessi',
+            ]
+        },
+        q2 = {
+            text: 'Quali sono i 3 componenti principali di un dispositivo di digitalizzazione?',
+            answers: [
+                'Equalizzatori',
+                'Decoder',
+                'Distorsori',
+                'Noise Reduction Unit',
+                'Campionatore',
+                'Hard Disk',
+                'Quantizzatore',
+                'Casse audio',
+                'Soldi, soldi e si, perché no, ancora soldi. Con quelli si può comprare tutto, quindi si può anche digitalizzare tutto no?'
+            ],
+            right: [
+                'Decoder',
+                'Campionatore',
+                'Quantizzatore',
+            ]
+        },
+        q3 = {
+            text: 'Quali fra questi sono dispositivi che hanno a che fare con la digitalizzazione?',
+            answers: [
+                'DC',
+                'AC',
+                'AC/DC',
+                'DAC',
+                'CAD',
+                'ADC',
+                'DAQ'
+            ],
+            right: [
+                'DAC',
+                'ADC',
+                'DAQ'
+            ]
+        },
+        q4 = {
+            text: 'La frequenza di Nyquist si troverà verosimilmente...',
+            answers: [
+                'Fra le frequenze più basse',
+                'Vicino la frequenza fondamentale',
+                'Vicino la frequenza fantasma',
+                'Fra le frequenze più alte'
+            ],
+            right: 'Fra le frequenze più alte'
+        },
+        q5 = {
+            text: 'Il teorema del campionamento di Nyquist-Shannon afferma che...',
+            answers: [
+                'Per poter ricostruire fedelmente un segnale campionato è necessario che il tasso di campionamento sia uguale o superiore al doppio della frequenza di Nyquist',
+                'Per poter ricostruire fedelmente un segnale campionato è necessario che il tasso di campionamento sia strettamente superiore al doppio della frequenza di Nyquist'
+            ],
+            right: 'Per poter ricostruire fedelmente un segnale campionato è necessario che il tasso di campionamento sia strettamente superiore al doppio della frequenza di Nyquist'
+        },
+        q6 = {
+            text: 'Indicare le affermazioni vere riguardo al campionamento critico:',
+            answers: [
+                'Il campionamento critico si ottiene quando si campiona con tasso di campionamento esattamente uguale al doppio della frequenza di Nyquist',
+                'Il campionamento critico è sempre pericoloso',
+                'Il campionamento critico può generare un segnale interpolato nullo',
+                'Il campionamento critico può generare il silenzio',
+                'Il campionamento critico è facilmente eliminabile aumentando pochissimo il tasso di campionamento'
+            ],
+            right: [
+                'Il campionamento critico si ottiene quando si campiona con tasso di campionamento esattamente uguale al doppio della frequenza di Nyquist',
+                'Il campionamento critico può generare un segnale interpolato nullo',
+                'Il campionamento critico può generare il silenzio',
+                'Il campionamento critico è facilmente eliminabile aumentando pochissimo il tasso di campionamento'
+            ]
+        },
+        q7 = {
+            text: 'Shannon è ed è stato...',
+            answers: [
+                'Il padre della teoria dell\'informazione',
+                'Giocoliere',
+                'Inventore di una tromba lanciafiamme',
+                'Dipendente delle Bell\'s Industries',
+                'Collega di Albert Einstein'
+            ],
+            right: [
+                'Il padre della teoria dell\'informazione',
+                'Giocoliere',
+                'Inventore di una tromba lanciafiamme',
+                'Dipendente delle Bell\'s Industries',
+                'Collega di Albert Einstein'
+            ]
+        },
+        q8 = {
+            text: 'Campionare con il giusto tasso di campionamento non basta. Bisogna anche applicare un filtro...',
+            answers: [
+                'Filtro Passa-Basso',
+                'Filtro Passa-Alto'
+            ],
+            right: 'Filtro Passa-Basso'
+        },
+        q9 = {
+            text: 'Fra quelle indicate, quale potrebbe essere una buona frequenza di campionamento per un suono?',
+            answers: [
+                '100Hz',
+                '500Hz',
+                '1000Hz',
+                '5000Hz',
+                '10000Hz',
+                '15000Hz',
+                '20000Hz',
+                '30000Hz',
+                '40000Hz',
+                '50000Hz'
+            ],
+            right: '50000Hz'
+        }
+    ],
+    auto11 = [
+        q1 = {
+            text: 'L\'errore di quantizzazione è dovuto a...',
+            answers: [
+                'Scelta fra quantizzazione uniforme e non uniforme',
+                'Grandezza dei quanti',
+                'Relazioni di tipo molti a uno',
+                'Alla codifica scelta',
+                'Al numero di bit di parità'
+            ],
+            right: [
+                'Grandezza dei quanti',
+                'Relazioni di tipo molti a uno'
+            ]
+        },
+        q2 = {
+            text: 'La quantizzazione logaritmica è l\'unico tipo di quantizzazione non uniforme',
+            answers: [
+                'Vero',
+                'Falso'
+            ],
+            right: 'Falso'
+        },
+        q3 = {
+            text: 'La gamma dinamica è...',
+            answers: [
+                'La dimensione media dei quanti',
+                'La dimensione massima dei quanti',
+                'La dimensione minima dei quanti',
+                'La dimensione del range che si vuole rappresentare',
+                'Nessuna delle precedenti'
+            ],
+            right: 'La dimensione del range che si vuole rappresentare'
+        },
+        q4 = {
+            text: 'L\'errore max nella quantizzazione uniforme è pari a...',
+            answers: [
+                'La gamma dinamica',
+                'Metà della gamma dinamica',
+                'La media della gamma dinamica',
+                'La gamma dinamica diviso il numero di quanti',
+                'La grandezza massima dei quanti',
+                'La grandezza media dei quanti',
+                'La grandezza di un quanto diviso 2',
+                'La gamma dinamica diviso due volte il numero dei quanti'
+            ],
+            right: [
+                'La grandezza di un quanto diviso 2',
+                'La gamma dinamica diviso due volte il numero dei quanti'
+            ]
+        },
+        q5 = {
+            text: 'Quale di queste affermazioni è vera',
+            answers: [
+                'Il SQNR è la versione quantizzata del SNR',
+                'Il SNR si applica nel caso dell\'audio digitale, mentre il SQNR nel caso dell\'audio analogico',
+                'Il SNR si applica nel caso dell\'audio analogico, mentre il SQNR nel caso dell\'audio digitale'
+            ],
+            right: 'Il SNR si applica nel caso dell\'audio analogico, mentre il SQNR nel caso dell\'audio digitale'
+        },
+        q6 = {
+            text: 'Nella formula per calcolare il SQNR, la N indica...',
+            answers: [
+                'Il Noise',
+                'Il numero di bit nella codifica', 
+                'Il numero di quanti',
+                'Il numero di campioni'
+            ],
+            right: 'Il numero di bit nella codifica'
+        },
+        q7 = {
+            text: 'Dato N=16, quanto vale il SQNR?',
+            answers: [
+                'Non abbiamo sufficienti dati per calcolarlo',
+                '90',
+                '96',
+                '120',
+                '144'
+            ],
+            right: '96'
+        },
+        q8 = {
+            text: 'Dato un SQNR pari a 72, quanto vale N?',
+            answers: [
+                'Non abbiamo sufficienti dati per calcolarlo',
+                '12',
+                '13',
+                '14',
+                '15'
+            ],
+            right: '12'
+        },
+        q9 = {
+            text: 'SQNR dovrebbe avere almeno valori...',
+            answers: [
+                '> 20dB',
+                '> 40dB',
+                '> 60dB',
+                '> 80dB',
+                '> 100dB',
+                'Dipende dalla codifica'
+            ],
+            right: '> 40dB'
+        },
+        q10 = {
+            text: 'Valori sufficientemente buoni di SQNR si hanno per...',
+            answers: [
+                '> 20dB',
+                '> 40dB',
+                '> 60dB',
+                '> 80dB',
+                '> 100dB',
+                'Dipende dalla codifica'
+            ],
+            right: '> 60dB'
+        },
+        q11 = {
+            text: 'Valori sufficientemente buoni di SQNR si hanno per...',
+            answers: [
+                '> 20dB',
+                '> 40dB',
+                '> 60dB',
+                '> 80dB',
+                '> 100dB',
+                'Dipende dalla codifica'
+            ],
+            right: '> 80dB'
+        },
+        q12 = {
+            text: 'Dato un tasso di campionamento pari a 44.1kHz e una PCM a 16bit, quanti byte servono per memorizzare un audio mono di 10 secondi?',
+            answers: [
+                'Circa 880KB',
+                'Circa 7MB',
+                'Circa 7KB',
+                'Circa 5MB',
+                'Circa 660KB'
+            ],
+            right: 'Circa 880KB'
+        },
+        q13 = {
+            text: 'I bit di parità permettono di...',
+            answers: [
+                'Con configurazioni semplici, di rilevare un numero pari di errori',
+                'Con configurazioni semplici, di rilevare un numero dispari di errori',
+                'Tramite configurazioni complesse, di correggere gli errori',
+                'Tramite configurazioni complesse, di individuare la posizione degli errori'
+            ],
+            right: [
+                'Con configurazioni semplici, di rilevare un numero dispari di errori',
+                'Tramite configurazioni complesse, di correggere gli errori',
+                'Tramite configurazioni complesse, di individuare la posizione degli errori'
+            ]
+        }
+    ],
+    auto12 = [
+        q1 = {
+            text: 'Assumendo una PCM a 8 bit, quali fra queste sono possibili rappresentazioni per l\'ampiezza?',
+            answers: [
+                'Da -128 a 127',
+                'Da -32.768 a 32.767',
+                'Da -8 a 7',
+                'Da -1 a 1',
+                'Da 0dB a -32dB',
+                'Da 0dB a -48dB',
+                'Da 0dB a -80dB',
+                'Da 0dB a -96dB'
+            ],
+            right: [
+                'Da -128 a 127',
+                'Da -1 a 1',
+                'Da 0dB a -48dB'
+            ]
+        },
+        q2 = {
+            text: 'Cosa accade alla durata di una traccia audio se aumento la frequenza di campionamento?',
+            answers: [
+                'Non abbiamo sufficienti elementi per rispondere',
+                'La sua durata aumenta',
+                'La sua durata diminuisce'
+            ],
+            right: 'La sua durata diminuisce'
+        },
+        q3 = {
+            text: 'Cosa accade se convertiamo un segnale stereo in un segnale mono?',
+            answers: [
+                'Perdiamo campioni',
+                'Le ampiezze totali sono dimezzate',
+                'Le ampiezze totali cambiano in funzione dei valori stereo originali',
+                'L\'approccio migliore è alternare i campioni dei due canali stereo per creare quello mono'
+            ],
+            right: 'Le ampiezze totali cambiano in funzione dei valori stereo originali'
+        },
+        q4 = {
+            text: 'L\'effetto Reverse...',
+            answers: [
+                'Inverte le ampiezze',
+                'Inverte i dB',
+                'Inverte l\'ordine dei campioni',
+                'Inverte le frequenze',
+                'Si ottiene con CTRL+Z'
+            ],
+            right: 'Inverte l\'ordine dei campioni'
+        },
+        q5 = {
+            text: 'L\'effetto Inverse...',
+            answers: [
+                'Inverte le ampiezze',
+                'Inverte i dB',
+                'Inverte l\'ordine dei campioni',
+                'Inverte le frequenze',
+                'Si ottiene con CTRL+Y'
+            ],
+            right: 'Inverte le ampiezze'
+        },
+        q6 = {
+            text: 'Gli equalizzatori (EQ) sono strumenti utili per...',
+            answers: [
+                'Equalizzare le ampiezze di un segnale',
+                'Equalizzare i campioni di un segnale',
+                'Equalizzare le frequenze di un segnale',
+                'Correggere il timbro',
+                'Modificare il contenuto armonico del segnale',
+                'Creare nuovi effetti',
+                'Eliminare il rumore'
+            ],
+            right: [
+                'Equalizzare le frequenze di un segnale',
+                'Correggere il timbro',
+                'Modificare il contenuto armonico del segnale',
+                'Creare nuovi effetti',
+                'Eliminare il rumore'
+            ]
+        },
+        q7 = {
+            text: 'Un filtro LPF',
+            answers: [
+                'Attenua le basse frequenze',
+                'Attenua le alte frequenze',
+                'Nessuna delle precedenti'
+            ],
+            right: 'Nessuna delle precedenti'
+        },
+        q8 = {
+            text: 'L\'intensità di attenuazione/guadagno (in dB) è un parametro importante per un filtro HPF',
+            answers: [
+                'Vero',
+                'Falso'
+            ],
+            right: 'Falso'
+        },
+        q9 = {
+            text: 'I filtri Low-Shelving e High-Shelving sono come i filtri LPF e HPF, ma su valori positivi anziché negativi',
+            answers: [
+                'Vero',
+                'Falso'
+            ],
+            right: 'Falso'
+        },
+        q10 = {
+            text: 'Nei filtri di peaking, quali delle seguenti affermazioni sulla Q sono vere?',
+            answers: [
+                'La Q è detta "Bandwidth"',
+                'La Q è detta "Quality Factor"',
+                'La Q indica la curtosi del filtro di peaking',
+                'Se la Q è alta il filtro è molto piatto',
+                'Se la Q è alta il filtro è molto appuntito (poco piatto)',
+                'Se la Q è alta il filtro di peaking "filtra più frequenze"',
+                'Se la Q è alta il filtro di peaking "filtra meno frequenze"',
+                'La Q può essere adottata in un filtro semiparametrico, e fissata costante',
+                'La Q può essere adottata in un filtro semiparametrico, e fissata proporzionale a un altro parametro',
+                'La presenza di un valore Q impone che tutti i filtri di peaking siano simmetrici'
+            ],
+            right: [
+                'La Q è detta "Bandwidth"',
+                'La Q è detta "Quality Factor"',
+                'La Q indica la curtosi del filtro di peaking',
+                'Se la Q è alta il filtro è molto appuntito (poco piatto)',
+                'Se la Q è alta il filtro di peaking "filtra meno frequenze"',
+                'La Q può essere adottata in un filtro semiparametrico, e fissata costante',
+                'La Q può essere adottata in un filtro semiparametrico, e fissata proporzionale a un altro parametro'
+            ]
+        }
+    ],
+    auto13 = [
+        q1 = {
+            text: 'Gli equalizzatori grafici sono un\'implementazione su interfaccia di filtri...',
+            answers: [
+                'HPF',
+                'LPF',
+                'Shelving',
+                'A campana',
+                'Nessuna delle precedenti'
+            ],
+            right: 'A campana'
+        },
+        q2 = {
+            text: 'Il filtro "Telefono"...',
+            answers: [
+                'Attenua le alte frequenze',
+                'Attenua le basse frequenze',
+                'Annulla le frequenze molto basse e molto alte',
+                'Attenua tutte le frequenze diverse dall\'intervallo [20Hz, 20.000Hz]',
+                'Attenua tutte le frequenze diverse dall\'intervallo [10dB, 130dB]',
+                'Attenua tutte le frequenze diverse dall\'intervallo [300Hz, 4.000Hz]',
+                'Attenua tutte le frequenze diverse dall\'intervallo [20Hz, 2.500Hz]'
+            ],
+            right: [
+                'Attenua le alte frequenze',
+                'Attenua le basse frequenze',
+                'Attenua tutte le frequenze diverse dall\'intervallo [300Hz, 4.000Hz]'
+            ]
+        },
+        q3 = {
+            text: 'Il filtro "Midcut"...',
+            answers: [
+                'Ha una forma a M',
+                'Ha una forma a U',
+                'Ha una forma a V',
+                'Annulla totalmente le frequenze medie',
+                'Amplifica le frequenze basse e alte'
+            ],
+            right: [
+                'Ha una forma a V',
+                'Amplifica le frequenze basse e alte'
+            ]
+        },
+        q4 = {
+            text: 'A cosa è dovuto l\'effetto "Clipping"?',
+            answers: [
+                'Capacità limitata del software di elaborazione audio',
+                'Settaggi errati (di sicurezza) del software di elaborazione audio',
+                'Scelte di ottimizzazione del software di elaborazione audio',
+                'Un intervallo limitato di valori disponibili per rappresentare l\'intensità',
+                'Alla codifica scelta'
+            ],
+            right: [
+                'Un intervallo limitato di valori disponibili per rappresentare l\'intensità',
+                'Alla codifica scelta'
+            ]
+        },
+        q5 = {
+            text: 'Il Fade-In e il Fade-Out sono due effetti che vanno inseriti, rispettivamente, all\'inizio e alla fine di una traccia audio',
+            answers: [
+                'Vero',
+                'Falso'
+            ],
+            right: 'Falso'
+        },
+        q6 = {
+            text: 'Gli operatori sul range dinamico modificano...',
+            answers: [
+                'Fase',
+                'Lunghezza d\'onda',
+                'Periodo',
+                'Intensità',
+                'Frequenze dello spettro'
+            ],
+            right: 'Intensità'
+        },
+        q7 = {
+            text: 'Quali di queste frasi sull\'operatore Compressore sono vere:',
+            answers: [
+                'Comprime tutte le ampiezze sotto una soglia fissata',
+                'Diminuisce l\'escursione dinamica del segnale',
+                'Modifica solo i valori di ampiezza oltre la soglia',
+                'Modifica i valori di ampiezza attorno alla soglia',
+                'Modifica tutti i valori di ampiezza',
+                'Può essere usato per restaurare una traccia audio scarsamente udibile'
+            ],
+            right: [
+                'Diminuisce l\'escursione dinamica del segnale',
+                'Modifica tutti i valori di ampiezza'
+            ]
+        },
+        q8 = {
+            text: 'Rispetto al Grafico degli Operatori Dinamici, in quale area si colloca l\'operatore Espansore?',
+            answers: [
+                'A',
+                'B',
+                'C',
+                'D',
+                'E'
+            ],
+            right: 'B',
+            img: 'assets/img/fig9.png'
+        },
+        q9 = {
+            text: 'Rispetto al Grafico degli Operatori Dinamici, in quale area si colloca l\'operatore che applica effetti simili al Clipping?',
+            answers: [
+                'A',
+                'B',
+                'C',
+                'D',
+                'E'
+            ],
+            right: 'E',
+            img: 'assets/img/fig9.png'
+        },
+        q10 = {
+            text: 'Rispetto al Grafico degli Operatori Dinamici, in quale area si colloca l\'operatore Compressore?',
+            answers: [
+                'A',
+                'B',
+                'C',
+                'D',
+                'E'
+            ],
+            right: 'D',
+            img: 'assets/img/fig9.png'
+        },
+        q11 = {
+            text: 'Rispetto al Grafico degli Operatori Dinamici, in quale area si colloca l\'operatore che lascia pressoché invariato l\'input?',
+            answers: [
+                'A',
+                'B',
+                'C',
+                'D',
+                'E'
+            ],
+            right: 'C',
+            img: 'assets/img/fig9.png'
+        },
+        q12 = {
+            text: 'Rispetto al Grafico degli Operatori Dinamici, in quale area si colloca l\'operatore che attenua il rumore?',
+            answers: [
+                'A',
+                'B',
+                'C',
+                'D',
+                'E'
+            ],
+            right: 'A',
+            img: 'assets/img/fig9.png'
+        },
+        q13 = {
+            text: 'Rispetto al Grafico degli Operatori Dinamici, in quale area si colloca l\'operatore che può essere usato per restaurare una traccia audio scarsamente udibile?',
+            answers: [
+                'A',
+                'B',
+                'C',
+                'D',
+                'E'
+            ],
+            right: 'B',
+            img: 'assets/img/fig9.png'
+        },
+        q13 = {
+            text: 'Rispetto al Grafico degli Operatori Dinamici, in quale area si colloca un operatore che può essere usato per aumentare il volume di una pubblicità?',
+            answers: [
+                'A',
+                'B',
+                'C',
+                'D',
+                'E'
+            ],
+            right: 'D',
+            img: 'assets/img/fig9.png'
+        },
+        q14 = {
+            text: 'E\' possibile applicare un solo operatore alla volta per processare una traccia audio',
+            answers: [
+                'Vero',
+                'Falso'
+            ],
+            right: 'Falso',  
+        }
     ]
 ];
