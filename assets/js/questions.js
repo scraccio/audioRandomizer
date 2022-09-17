@@ -882,7 +882,7 @@ var autovalues = [
                 'circa 310Hz',
                 'Non abbiamo sufficienti elementi per calcolarlo'
             ],
-            right: 'circa 330Hz'
+            right: 'circa 310Hz'
         },
         q5 = {
             text: 'Gli inviluppi sonori hanno tutti 4 transitori nell\'ordine ADSR, cioè Attack, Decay, Sustain, Release',
