@@ -1,5 +1,6 @@
 var len;
 var data;
+var questionArray = [];
 
 function shuffleArray(array){
     for (var i = array.length - 1; i > 0; i--) {
@@ -35,11 +36,11 @@ function menuButtonOnclick(){
         }
         if(len.length != 0){
             data = array.slice(0, parseInt(len));
-            createTest(array.slice(0, parseInt(len)));
+            createTest();
         }
         else{
             data = array;
-            createTest(array);
+            createTest();
         }
     }
 }
@@ -109,7 +110,7 @@ function submitButtonOnclick(){
     }
 }
 
-function createTest(data){
+function createTest(){
 
     data = shuffleArray(data);
     for(let i=0; i<data.length; i++){
@@ -196,11 +197,11 @@ function completeTestButton(){
     }
     if(len.length != 0){
         data = array.slice(0, parseInt(len));
-        createTest(array.slice(0, parseInt(len)));
+        createTest();
     }
     else{
         data = array;
-        createTest(array);
+        createTest();
     }
 }
 
@@ -258,6 +259,7 @@ function homeButton(){
         document.querySelector('.menu > :first-child').onclick = completeTestButton;
         document.querySelector('.menu > :last-child').onclick = customTestButton;
         document.querySelector('.home-button').onclick = homeButton;
+        questionArray = [];
     }
 
     if(document.querySelector('.main-test') && document.querySelector('.menu-custom')){
@@ -275,6 +277,7 @@ function homeButton(){
         document.querySelector('.menu > :first-child').onclick = completeTestButton;
         document.querySelector('.menu > :last-child').onclick = customTestButton;
         document.querySelector('.home-button').onclick = homeButton;
+        questionArray = [];
     }
 }
 
