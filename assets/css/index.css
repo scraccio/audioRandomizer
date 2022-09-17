@@ -218,6 +218,10 @@ html, body{
         font-size: 6vw;
     }
 
+    .menu-custom{
+        width: 80%;
+    }
+
     .title{
         width: 90%;
         font-size: 8vw;
