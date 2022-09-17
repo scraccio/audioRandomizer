@@ -195,6 +195,7 @@ function completeTestButton(){
     for(let i=0; i<autovalues.length; i++){
         array = array.concat(autovalues[i]);
     }
+    data = shuffleArray(array);
     if(len.length != 0){
         data = array.slice(0, parseInt(len));
         createTest();
