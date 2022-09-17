@@ -2231,5 +2231,799 @@ var autovalues = [
             ],
             right: 'Falso',  
         }
+    ],
+    auto14 = [
+        q1 = {
+            text: 'La compressione serve a...',
+            answers: [
+                'Ridurre i tempi di elaborazione',
+                'Ridurre lo spazio di memoria occupato',
+                'Ridurre i tempi di trasmissione',
+                'Ridurre i costi di trasmissione',
+                'Ridurre la complessità della trasmissione'
+            ],
+            right: [
+                'Ridurre lo spazio di memoria occupato',
+                'Ridurre i tempi di trasmissione',
+                'Ridurre i costi di trasmissione'
+            ]
+        },
+        q2 = {
+            text: 'La compressione del silenzio...',
+            answers: [
+                'E\' una tecnica lossless',
+                'E\' una tecnica lossy',
+                'Utilizza alcune soglie, fra cui la soglia sull\'ampiezza',
+                'Utilizza alcune soglie, fra cui la soglia sulla frequenza',
+                'Utilizza alcune soglie, fra cui delle soglie di delay temporale',
+                'E\' facile da applicare, perché è facile individuare cosa sia silenzio'
+            ],
+            right: [
+                'E\' una tecnica lossy',
+                'Utilizza alcune soglie, fra cui la soglia sull\'ampiezza',
+                'Utilizza alcune soglie, fra cui delle soglie di delay temporale'
+            ]
+        },
+        q2 = {
+            text: 'La soglia Tq (Threshold to quiet) indica:',
+            answers: [
+                'La soglia per individuare il silenzio (quiet) in una traccia audio',
+                'La soglia minima di udibilità nel grafico delle curve isofoniche',
+                'Una soglia adattiva che cambia e si assesta durante il silenzio (in quiet)'
+            ],
+            right: 'La soglia minima di udibilità nel grafico delle curve isofoniche'
+        },
+        q3 = {
+            text: 'Qual è il bit-rate di una traccia audio di un segnale mono acquisito con tasso di campionamento pari a 44,1kHz e PCM lineare a 24bit?',
+            answers: [
+                '705.6kbps',
+                '705.6Mbps',
+                '1058kbps',
+                '1058Mbps',
+                '1420kbps',
+                '1420Mbps'
+            ],
+            right: '1058kbps'
+        },
+        q4 = {
+            text: 'Le codifiche μ-Law e A-Law...',
+            answers: [
+                'Sono Lossy',
+                'Sono Lossless',
+                'Sono state pensate per trasmissione su rete telefonica',
+                'Sono state pensate per trasmissione su rete wireless',
+                'Sono state pensate per trasmissione su rete ADSL',
+                'Sono state pensate per trasmissione su rete ISDN',
+                'Hanno un bit-rate di 705.6kbps',
+                'Sfruttano una quantizzazione lineare',
+                'Sfruttano una quantizzazione non lineare',
+            ],
+            right: [
+                'Sono Lossy',
+                'Sono state pensate per trasmissione su rete ISDN',
+                'Sfruttano una quantizzazione non lineare',
+            ]
+        },
+        q5 = {
+            text: 'Nella codifica μ-Law, quanto vale la μ?',
+            answers: [
+                '(2^2)-1',
+                '(2^6)-1',
+                '(2^8)-1',
+                '(2^13)-1',
+                '(2^14)-1',
+                '(2^16)-1',
+                'Nessuna delle precedenti'
+            ],
+            right: '(2^8)-1'
+        },
+        q6 = {
+            text: 'Nella codifica μ-Law, la x...',
+            answers: [
+                'E\' normalizzata fra 0 e 1',
+                'E\' normalizzata fra -1 e 1',
+                'E\' normalizzata fra 0 e -60dB',
+                'Non è normalizzata',
+                'E\' codificata con una codifica con segno',
+                'E\' codificata con una codifica senza segno',
+                'Rappresenta un range continuo di valori',
+                'Rappresenta un range discreto di valori'
+            ],
+            right: [
+                'E\' normalizzata fra -1 e 1',
+                'E\' codificata con una codifica con segno',
+                'Rappresenta un range discreto di valori'
+            ]
+        },
+        q7 = {
+            text: 'La DEcodifica μ-Law si basa principalmente su...',
+            answers: [
+                'Un logaritmo',
+                'Una potenza',
+                'Una derivata',
+                'Un integrale',
+                'Un esponenziale',
+                'Un fattoriale'
+            ],
+            right: 'Un esponenziale'
+        },
+        q8 = {
+            text: 'Nelle codifiche μ-Law e A-Law avranno maggior precisione i valori di intensità (rispetto a un range da -1 a 1)...',
+            answers: [
+                'Bassi (vicino -1)',
+                'Medi (vicino 0)',
+                'Alti (vicino 1)'
+            ],
+            right: 'Medi (vicino 0)'
+        },
+        q9 = {
+            text: 'Se disegnassimo la curva che mostra la Ri-quantizzazione da Quantizzazione uniforme a non uniforme nelle codifiche μ-Law e A-Law, la curva avrebbe una forma...',
+            answers: [
+                'Lineare',
+                'Esponenziale',
+                'Logaritmica',
+                'Sinusoidale',
+                'A sigmoide'
+            ],
+            right: 'A sigmoide'
+        },
+        q10 = {
+            text: 'Quali fra queste affermazioni sulle codifiche μ-Law e A-Law è vera, confrontandole ad una quantizzazione uniforme?',
+            answers: [
+                'Si passa da 16 a 8 bit per μ-Law e da 16 a 8 bit per la A-Law',
+                'Si passa da 13 a 8 bit per μ-Law e da 14 a 8 bit per la A-Law',
+                'Si passa da 14 a 8 bit per μ-Law e da 13 a 8 bit per la A-Law',
+                'Si passa da 12 a 10 bit per μ-Law e da 13 a 10 bit per la A-Law',
+                'Nessuna delle precedenti'
+            ],
+            right: 'Si passa da 14 a 8 bit per μ-Law e da 13 a 8 bit per la A-Law'
+        },
+        q11 = {
+            text: 'La PCM si può migliorare con...',
+            answers: [
+                'RLE (Run Length Encoding)',
+                'Aumentando il numero di bit',
+                'Usando una rappresentazione in esadecimale',
+                'Differencing',
+                'Prediction',
+                'Usando la modulazione in frequenza',
+                'Usando la modulazione in ampiezza',
+                'LUT'
+            ],
+            right: [
+                'RLE (Run Length Encoding)',
+                'Differencing',
+                'Prediction',
+                'LUT'
+            ]
+        }
+    ],
+    auto15 = [
+        q1 = {
+            text: 'La definizione migliore di "Codifica trasparente" è:',
+            answers: [
+                'Una codifica da cui traspare l\'informazione',
+                'Una codifica lossless',
+                'Una codifica digitale perfettamente uguale all\'analogica',
+                'Una codifica compressa indistinguibile da quella non compressa'
+            ],
+            right: 'Una codifica compressa indistinguibile da quella non compressa'
+        },
+        q2 = {
+            text: 'Chi fra questi personaggi è noto come "il padre delle codifiche di compressione di tipo percettivo"?',
+            answers: [
+                'Shannon',
+                'Bell',
+                'Nyquist',
+                'Johnston',
+                'Fletcher'
+            ],
+            right: 'Johnston'
+        },
+        q3 = {
+            text: 'Il limite per ottenere la codifica trasparente calcolato da J.D. Johnston è pari a...',
+            answers: [
+                'La frequenza di Nyquist',
+                'La frequenza fondamentale',
+                'La frequenza fondamentale * 2',
+                'La frequenza fantasma',
+                'Circa 2.1 bit / campione',
+                'Circa 8 bit / campione',
+                '120 dB'
+            ],
+            right:  'Circa 2.1 bit / campione'
+        },
+        q4 = {
+            text: 'Dato un tasso di campionamento pari a 22kHz e un bitrate (compresso) di 128kbps, dire se la codifica sia o meno trasparente.',
+            answers: [
+                'Vero',
+                'Falso'
+            ],
+            right:  'Vero'
+        },
+        q5 = {
+            text: 'Qual è lo scopo principale della tecnica Compansion?',
+            answers: [
+                'Compensare i bit persi durante la compressione',
+                'Rimuovere il rumore',
+                'Espandere il range dinamico',
+                'Comprimere il segnale',
+                'Applicare una compressione lossy come se fosse lossless',
+                'Comprimere ed espandere il range dinamico'
+            ],
+            right:  'Comprimere ed espandere il range dinamico'
+        },
+        q6 = {
+            text: 'Quali sono le 4 tecniche principali su cui si basa la compressione di tipo percettivo?',
+            answers: [
+                'Compressione lossless',
+                'Compressione lossy',
+                'Codifica di Huffman',
+                'Codifica trasparente',
+                'Codifica fantasma',
+                'Codifica a blocchi',
+                'Codifica delle frequenze',
+                'Codifica per sotto-bande',
+                'Ri-quantizzazione'
+            ],
+            right:  [
+                'Codifica di Huffman',
+                'Codifica a blocchi',
+                'Codifica delle frequenze',
+                'Codifica per sotto-bande'
+            ]
+        },
+        q7 = {
+            text: 'Come si può risolvere il problema dei pre-echi?',
+            answers: [
+                'Con dei filtri anti-eco',
+                'Compressione lossless',
+                'Echi fantasma',
+                'Ridurre la durata dei blocchi',
+                'Individuando e isolando i rumori impulsivi',
+                'Compressione lossy'
+            ],
+            right:  [
+                'Ridurre la durata dei blocchi',
+                'Individuando e isolando i rumori impulsivi'
+            ]
+        },
+        q8 = {
+            text: 'Quale trasformata è più efficiente?',
+            answers: [
+                'FT',
+                'FFT',
+                'SFT',
+                'DFT',
+                'DCT'
+            ],
+            right:  'DCT'
+        },
+        q9 = {
+            text: 'Quali affermazioni su QMF sono vere?',
+            answers: [
+                'E\' un banco di filtri che divide il range di frequenze in alto e basso',
+                'E\' possibile applicare solo un banco di filtri QMF per volta',
+                'E\' possibile applicare più di un banco di filtri QMF per volta',
+                'Le due bande di QMF devono necessariamente avere sempre e in ogni caso la stessa grandezza'
+            ],
+            right: [
+                'E\' un banco di filtri che divide il range di frequenze in alto e basso',
+                'E\' possibile applicare più di un banco di filtri QMF per volta',
+                'Le due bande di QMF devono necessariamente avere sempre e in ogni caso la stessa grandezza'
+            ] 
+        },
+        q10 = {
+            text: 'Indicare le qualità della codifica di Huffman',
+            answers: [
+                'Codifica ottimale che si avvicina al limite di Shannon',
+                'Codifica efficiente con codici a lunghezza fissa',
+                'Codifica efficiente con codici a lunghezza variabile',
+                'Compressione Lossy, ma non percepibile (di fatto Lossless)',
+                'Compressione Lossless',
+                'Assegna agli elementi più frequenti le codeword più corte',
+                'Assegna agli elementi più frequenti le codeword più lunghe',
+                'Codifica con codici senza prefissi',
+            ],
+            right: [
+                'Codifica ottimale che si avvicina al limite di Shannon',
+                'Codifica efficiente con codici a lunghezza variabile',
+                'Compressione Lossless',
+                'Assegna agli elementi più frequenti le codeword più corte',
+                'Codifica con codici senza prefissi',
+            ] 
+        }
+    ],
+    auto16 = [
+        q1 = {
+            text: 'Lo standard MPEG è relativo a...',
+            answers: [
+                'Video',
+                'Audio',
+                'Altro contenuto multimediale (ad esempio il VR)'
+            ],
+            right: [
+                'Video',
+                'Audio',
+                'Altro contenuto multimediale (ad esempio il VR)'
+            ]
+        },
+        q2 = {
+            text: 'MPEG-4 è uno standard per...',
+            answers: [
+                'Codifica',
+                'Interfaccia di scambio',
+                'Archiviazione'
+            ],
+            right: 'Codifica'
+        },
+        q3 = {
+            text: 'MPEG-7 è uno standard per...',
+            answers: [
+                'Codifica',
+                'Interfaccia di scambio',
+                'Archiviazione'
+            ],
+            right: 'Archiviazione'
+        },
+        q4 = {
+            text: 'MPEG-21 è uno standard per...',
+            answers: [
+                'Codifica',
+                'Interfaccia di scambio',
+                'Archiviazione'
+            ],
+            right: 'Interfaccia di scambio'
+        },
+        q5 = {
+            text: 'Gli standard MPEG garantiscono la retrocompatibilità. Questo significa che è possibile decodificare con MPEG-2 qualcosa codificato con MPEG-4',
+            answers: [
+                'Vero',
+                'Falso'
+            ],
+            right: 'Falso'
+        },
+        q6 = {
+            text: 'Gli standard MPEG garantiscono la retrocompatibilità. Questo significa che è possibile decodificare con MPEG-2 qualcosa codificato con MPEG-4',
+            answers: [
+                'Obbligatorie',
+                'Libere'
+            ],
+            right: 'Libere'
+        },
+        q7 = {
+            text: 'MP3 è un formato relativo principalmente a...',
+            answers: [
+                'MPEG-1',
+                'MPEG-2',
+                'MPEG-3',
+                'MPEG-4'
+            ],
+            right: 'MPEG-1'
+        },
+        q8 = {
+            text: 'Quali di queste affermazoni sul layer I di MPEG-1 sono vere:',
+            answers: [
+                'Conta 12 bande',
+                'Conta 26 bande',
+                'Conta 32 bande',
+                'Le bande non sono uniformi (come le bande critiche)',
+                'Le bande sono uniformi, con grandezza assoluta',
+                'Le bande sono uniformi, con grandezza relativa',
+                'Ogni blocco conta 384 campioni (32 bande x 12 campioni)'
+            ],
+            right: [
+                'Conta 32 bande',
+                'Le bande sono uniformi, con grandezza relativa',
+                'Ogni blocco conta 384 campioni (32 bande x 12 campioni)'
+            ]
+        },
+        q9 = {
+            text: 'Quali di queste affermazoni sul layer I di MPEG-1 sono vere:',
+            answers: [
+                'Vero',
+                'Falso'
+            ],
+            right: 'Vero'
+        },
+        q10 = {
+            text: 'Quali sono i miglioramenti di MPEG-1 Layer II rispetto a Layer I?',
+            answers: [
+                'Risoluzione della FFT raddoppiata',
+                'Risoluzione della FFT triplicata',
+                'Tassi di campionamenti aggiuntivi che valgono il doppio rispetto a prima',
+                'Tassi di campionamenti aggiuntivi che valgono la metà rispetto a prima',
+                'Blocchi grandi il doppio',
+                'Blocchi grandi il triplo',
+                'Classi di riquantizzazione aggiuntive'
+            ],
+            right: [
+                'Risoluzione della FFT raddoppiata',
+                'Tassi di campionamenti aggiuntivi che valgono la metà rispetto a prima',
+                'Blocchi grandi il triplo',
+                'Classi di riquantizzazione aggiuntive'
+            ]
+        },
+        q11 = {
+            text: 'Quali sono i miglioramenti di MPEG-1 Layer III rispetto a Layer II?',
+            answers: [
+                'DFT al posto di FFT',
+                'DCT al posto di FFT',
+                'MDCT al posto di FFT',
+                'Quantizzazione uniforme',
+                'Quantizzazione non uniforme',
+                'Fattori di scala multipli per banda',
+                'Codifica di Huffman'
+            ],
+            right: [
+                'MDCT al posto di FFT',
+                'Quantizzazione non uniforme',
+                'Codifica di Huffman'
+            ]
+        },
+        q12 = {
+            text: 'Quali fra questi formati audio avanzati è il migliore per applicazioni di archiviazione?',
+            answers: [
+                'AAC',
+                'Dolby AC-3',
+                'WMA',
+                'FLAC'
+            ],
+            right: 'FLAC'
+        },
+        q13 = {
+            text: 'Quali fra questi formati audio avanzati ha prestazioni migliori sulla musica e peggiori sulla voce, rispetto a MPEG?',
+            answers: [
+                'AAC',
+                'Dolby AC-3',
+                'WMA',
+                'FLAC'
+            ],
+            right: 'WMA'
+        }
+    ],
+    auto17 = [
+        q1 = {
+            text: 'Qual è il significato dell\'acronimo MIDI?',
+            answers: [
+                'Media Interchange Data Interface',
+                'Market Independent Data Interface',
+                'Musical Instrument Digital Interface',
+                'Media Independent Digital Interface'
+            ],
+            right: 'Musical Instrument Digital Interface'
+        },
+        q2 = {
+            text: 'Il MIDI nasce...',
+            answers: [
+                'negli anni \'60',
+                'negli anni \'70',
+                'negli anni \'80',
+                'negli anni \'90',
+                'in epoca recentissima'
+            ],
+            right: 'negli anni \'80'
+        },
+        q3 = {
+            text: 'Quale fra questi è lo scopo principale per cui è nato il MIDI?',
+            answers: [
+                'Fornire un formato che fosse più economico degli altri',
+                'Stabilire un\'interfaccia comune fra dispositivi eterogenei',
+                'Definire un protocollo che fosse più efficiente degli altri',
+                'Standardizzare la qualità timbrica dei moduli di sintesi'
+            ],
+            right: 'Stabilire un\'interfaccia comune fra dispositivi eterogenei'
+        },
+        q4 = {
+            text: 'Quanti Canali sono definibili nel MIDI?',
+            answers: [
+                '8',
+                '16',
+                '24',
+                '32',
+                '64', 
+                '128',
+                'N'
+            ],
+            right: '16'
+        },
+        q5 = {
+            text: 'Quante Tracce sono definibili nel MIDI?',
+            answers: [
+                '8',
+                '16',
+                '24',
+                '32',
+                '64', 
+                '128',
+                'N'
+            ],
+            right: 'N'
+        },
+        q6 = {
+            text: 'Quante Patch sono definibili nel MIDI?',
+            answers: [
+                '8',
+                '16',
+                '24',
+                '32',
+                '64', 
+                '128',
+                'N'
+            ],
+            right: '128'
+        },
+        q7 = {
+            text: 'Quanti Banchi sono definibili nel MIDI?',
+            answers: [
+                '8',
+                '16',
+                '24',
+                '32',
+                '64', 
+                '128',
+                'N'
+            ],
+            right: 'N'
+        },
+        q8 = {
+            text: 'Quanti Banchi sono definibili nel MIDI?',
+            answers: [
+                'Sequencer',
+                'Canali',
+                'Tracce',
+                'Patch',
+                'Banchi'
+            ],
+            right: 'Tracce'
+        },
+        q9 = {
+            text: 'Quale fra i seguenti indica il livello di astrazione per implementare il concetto di strumento?',
+            answers: [
+                'Sequencer',
+                'Canali',
+                'Tracce',
+                'Patch',
+                'Banchi'
+            ],
+            right: 'Canali'
+        },
+        q10 = {
+            text: 'Quale fra i seguenti indica il livello di astrazione per implementare il concetto di partiture e mixing?',
+            answers: [
+                'Sequencer',
+                'Canali',
+                'Tracce',
+                'Patch',
+                'Banchi'
+            ],
+            right: 'Tracce'
+        },
+        q11 = {
+            text: 'Quale fra i seguenti indica il livello di astrazione per implementare il concetto di partiture e mixing?',
+            answers: [
+                'Sequencer',
+                'Canali',
+                'Tracce',
+                'Patch',
+                'Banchi'
+            ],
+            right: 'Patch'
+        },
+        q12 = {
+            text: 'La relazione fra Canali-e-Tracce è...',
+            answers: [
+                '1-1',
+                '1-N', 
+                'N-1',
+                'N-N'
+            ],
+            right: '1-N'
+        },
+        q13 = {
+            text: 'La relazione fra Canali-e-Patch è...',
+            answers: [
+                '1-1',
+                '1-N', 
+                'N-1',
+                'N-N'
+            ],
+            right: 'N-1'
+        },
+        q14 = {
+            text: 'Calcolare quanto dura 1 tick essendo BPM=240 e PPQ=48',
+            answers: [
+                '5 secondi',
+                '0.5 secondi',
+                '0.05 secondi',
+                '0.005 secondi',
+                '0.0005 secondi',
+                'Non abbiamo sufficienti dati'
+            ],
+            right: '0.005 secondi'
+        },
+        q15 = {
+            text: 'Se i primi 4 bit, esclusi quelli di sincronizzazione, di un messaggio MIDI sono uguali a 1001, allora si avrà un...',
+            answers: [
+                'System Message',
+                'Channel Message - Note On',
+                'Channel Message - Note Off',
+                'Channel Message - Pitch Bend Change',
+                'Nessuno dei precedenti'
+            ],
+            right: 'Channel Message - Note On'
+        },
+        q16 = {
+            text: 'Se i primi 4 bit, esclusi quelli di sincronizzazione, di un messaggio MIDI sono uguali a 1100, allora si avrà un...',
+            answers: [
+                'System Message',
+                'Channel Message - Note On',
+                'Channel Message - Program Change',
+                'Channel Message - Channel Pressure',
+                'Nessuno dei precedenti'
+            ],
+            right: 'Channel Message - Program Change'
+        },
+        q17 = {
+            text: 'Se i primi 4 bit, esclusi quelli di sincronizzazione, di un messaggio MIDI sono uguali a 1111, allora si avrà un...',
+            answers: [
+                'System Message',
+                'Channel Message - Note On',
+                'Channel Message - Pitch Bend Change',
+                'Channel Message - Note Off',
+                'Nessuno dei precedenti'
+            ],
+            right: 'System Message'
+        },
+        q18 = {
+            text: 'Se i primi 4 bit, esclusi quelli di sincronizzazione, di un messaggio MIDI sono uguali a 0111, allora si avrà un...',
+            answers: [
+                'System Message',
+                'Channel Message - Note On',
+                'Channel Message - Pitch Bend Change',
+                'Channel Message - Channel Pressure',
+                'Nessuno dei precedenti'
+            ],
+            right: 'Nessuno dei precedenti'
+        },
+        q19 = {
+            text: 'Se i primi 4 bit, esclusi quelli di sincronizzazione, di un messaggio MIDI sono uguali a 0111, allora si avrà un...',
+            answers: [
+                'Gestiscono l\'attivazione dei sistemi MIDI',
+                'Gestiscono l\'attivazione esclusiva di un device',
+                'Gestiscono l\'esclusione di uno o più device',
+                'Sono messaggi non ancora definiti (infatti c\'è spazio per altri 5)',
+                'Sono utilizzati dai costruttori per specifiche proprietarie'
+            ],
+            right: 'Sono utilizzati dai costruttori per specifiche proprietarie'
+        }
+    ],
+    auto18 = [
+        q1 = {
+            text: 'La libreria d\'ausilio vista a lezione per lanciare comandi in Python su shell si chiama...',
+            answers: [
+                'cmd',
+                'path',
+                'exe',
+                'process',
+                'subprocess'
+            ],
+            right: 'subprocess'
+        },
+        q2 = {
+            text: 'La libreria vista a lezione per la gestione del filesystem in Python si chiama...',
+            answers: [
+                'ls',
+                'fs',
+                'os',
+                'dir',
+                'c:\\'
+            ],
+            right: 'os'
+        },
+        q3 = {
+            text: 'In ffmpeg, qual è il flag utilizzato per indicare il numero di canali di un file audio da convertire?',
+            answers: [
+                '-ac',
+                '-ch',
+                '-chan',
+                '-mono',
+                '-stereo'
+            ],
+            right: '-ac'
+        },
+        q4 = {
+            text: 'In ffmpeg, qual è il flag utilizzato per indicare la frequenza di campionamento?',
+            answers: [
+                '-sr',
+                '-ar',
+                '-rate',
+                '-beat',
+                '-bit'
+            ],
+            right: '-ar'
+        },
+        q5 = {
+            text: 'Quale fra queste è la funzione che esegue il comando cmdffmpeg?',
+            answers: [
+                'os.exec(cmdffmpeg)',
+                'os.call(cmdffmpeg)',
+                'os.system(cmdffmpeg)',
+                'sp.run(cmdffmpeg)',
+                'sp.os(cmdffmpeg)',
+                'sp.call(cmdffmpeg)'
+            ],
+            right: 'sp.call(cmdffmpeg)'
+        },
+        q6 = {
+            text: 'La libreria vista a lezione per leggere i file WAVE in Python si chiama...',
+            answers: [
+                'wave',
+                'audiolib',
+                'scykit',
+                'media',
+                'Nessuna delle precedenti'
+            ],
+            right: 'Nessuna delle precedenti'
+        },
+        q7 = {
+            text: 'Quale fra queste è la funzione Python vista a lezione per leggere un file WAVE?',
+            answers: [
+                'wave.play()',
+                'wavfile.play()',
+                'wave.read()',
+                'wavfile.read()',
+                'audio.execute()'
+            ],
+            right: 'wavfile.read()'
+        },
+        q8 = {
+            text: 'Quali fra questi valori sono restituiti dalla funzione Python vista a lezione per leggere un file WAVE?',
+            answers: [
+                'samplerate',
+                'frequency',
+                'data',
+                'volume',
+                'peak'
+            ],
+            right: [
+                'samplerate',
+                'data'
+            ]
+        },
+        q9 = {
+            text: 'La libreria vista a lezione per creare grafici in Python si chiama',
+            answers: [
+                'lib.pyplot',
+                'plotlib.pyplot',
+                'matplotlib.pyplot',
+                'mediamatplotlib.pyplot',
+                'pyplot.pyplot'
+            ],
+            right: 'matplotlib.pyplot'
+        },
+        q10 = {
+            text: 'La libreria vista a lezione per calcolare la FFT in Python si chiama...',
+            answers: [
+                'scipy.fft',
+                'scipy.fourier',
+                'scipy.s2f',
+                'scipy.fftpack',
+                'scipy.freq'
+            ],
+            right: 'scipy.fftpack'
+        },
+        q11 = {
+            text: 'La libreria vista a lezione per calcolare la IFFT in Python si chiama...',
+            answers: [
+                'scipy.ifft',
+                'scipy.ifourier',
+                'scipy.f2s',
+                'scipy.ifftpack',
+                'scipy.ifreq',
+                'scipy.fftpack'
+            ],
+            right: 'scipy.fftpack'
+        }
     ]
 ];
