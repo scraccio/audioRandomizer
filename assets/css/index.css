@@ -190,7 +190,7 @@ html, body{
     width: 50%;
     height: 100px;
     font-size: 4vw;
-
+    text-align: center;
 }
 
 .cell{

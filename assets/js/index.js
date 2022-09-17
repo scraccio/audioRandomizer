@@ -77,6 +77,16 @@ function submitButtonOnclick(){
                         else{
                             console.log('Risposta ' + (i+1) + ' errata');
                             $(items[i]).parent()[0].style.backgroundColor = 'rgba(218, 17, 17, 0.1)';
+                            items[i].querySelectorAll('.answer').forEach((a)=>{
+                                if(data[i].right.includes(a.textContent)){
+                                    a.style.color = 'rgb(0, 200, 50)';
+                                    a.style.fontWeight = 'bold';
+                                }
+                                else{
+                                    a.style.color = 'red';
+                                    a.style.fontWeight = 'bold';
+                                }
+                            });
                         }
                         break;
                     }
@@ -101,6 +111,17 @@ function submitButtonOnclick(){
                     }
                     else{
                         console.log('Risposta ' + (i+1) + ' errata');
+                        $(items[i]).parent()[0].style.backgroundColor = 'rgba(218, 17, 17, 0.1)';
+                        items[i].querySelectorAll('.answer').forEach((a)=>{
+                            if(data[i].right.includes(a.textContent)){
+                                a.style.color = 'rgb(0, 200, 50)';
+                                a.style.fontWeight = 'bold';
+                            }
+                            else{
+                                a.style.color = 'red';
+                                a.style.fontWeight = 'bold';
+                            }
+                        });
                     }
                 }
             }
