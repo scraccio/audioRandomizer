@@ -89,8 +89,8 @@ function submitButtonOnclick(){
                                 }
                             });
                         }
-                        break;
                     }
+                    items[i].querySelectorAll('.answer')[j].querySelector('input').disabled = true;
                 }
             }
             if(type == "checkbox"){
@@ -124,6 +124,7 @@ function submitButtonOnclick(){
                             }
                         });
                     }
+                    items[i].querySelectorAll('.answer')[j].querySelector('input').disabled = true;
                 }
             }
         }
