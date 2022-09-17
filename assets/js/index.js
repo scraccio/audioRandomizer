@@ -34,6 +34,7 @@ function menuButtonOnclick(){
         for(let i=0; i<autoArray.length; i++){
             array = array.concat(autovalues[autoArray[i] - 1]);
         }
+        data = shuffleArray(array);
         if(len.length != 0){
             data = array.slice(0, parseInt(len));
             createTest();
