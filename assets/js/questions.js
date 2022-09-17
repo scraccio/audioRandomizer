@@ -985,7 +985,7 @@ var autovalues = [
             ]
         },
         q14 = {
-            text: 'Quali fra questi rumori sono caratterizzati da valori d\'ampiezza che decrescono per ogni ottava?',
+            text: 'Quali fra questi rumori sono caratterizzati da valori d\'ampiezza che crescono per ogni ottava?',
             answers: [
                 'Rumore rosa',
                 'Rumore marrone',
@@ -1037,6 +1037,605 @@ var autovalues = [
                 'Rumore blu'
             ],
             right: 'Rumore grigio'
+        }
+    ],
+    auto7 = [
+        q1 = {
+            text: 'Quali sono i funzionamenti principali legati all\'udito individuati dagli psicofisici?',
+            answers: [
+                'Funzionamento adattivo',
+                'Funzionamento localizzatore',
+                'Funzionamento cognitivo',
+                'Funzionamento creativo',
+                'Funzionamento spazializzatore',
+                'Funzionamento fisiologico'
+            ],
+            right: [
+                'Funzionamento cognitivo',
+                'Funzionamento fisiologico'
+            ]
+        },
+        q2 = {
+            text: 'Quali fra questi sono i compiti del sistema uditivo?',
+            answers: [
+                'Comprensione del linguaggio',
+                'Riconoscimento del tipo di sorgente sonora',
+                'Ascolto musicale',
+                'Riconoscimento dell\'ambiente circostante',
+                'Localizzazione delle sorgenti sonore'
+            ],
+            right: [
+                'Comprensione del linguaggio',
+                'Riconoscimento del tipo di sorgente sonora',
+                'Ascolto musicale',
+                'Riconoscimento dell\'ambiente circostante',
+                'Localizzazione delle sorgenti sonore'
+            ]
+        },
+        q3 = {
+            text: 'Per quanto riguarda l\'udito, dal punto di vista scientifico degli psicofisici, quale di questi funzionamenti non è ancora esattamente chiaro?',
+            answers: [
+                'Funzionamento creativo',
+                'Funzionamento cognitivo',
+                'Funzionamento adattivo',
+                'Funzionamento fisiologico'
+            ],
+            right: 'Funzionamento cognitivo'
+        },
+        q4 = {
+            text: 'Quali fra questi elementi dell\'orecchio segna il confine fra orecchio esterno e orecchio medio?',
+            answers: [
+                'Padiglione auricolare',
+                'Condotto uditivo ',
+                'Timpano',
+                'Martello',
+                'Incudine',
+                'Staffa',
+                'Tromba di Eustachio',
+                'Muscolo Stapedio',
+                'Coclea',
+                'Labirinto'
+            ],
+            right: 'Timpano'
+        },
+        q5 = {
+            text: 'Quali fra questi elementi dell\'orecchio rappresenta un sistema di protezione dai suoni ad altissimo volume?',
+            answers: [
+                'Padiglione auricolare',
+                'Condotto uditivo ',
+                'Timpano',
+                'Martello',
+                'Incudine',
+                'Staffa',
+                'Tromba di Eustachio',
+                'Muscolo Stapedio',
+                'Coclea',
+                'Labirinto'
+            ],
+            right: 'Muscolo Stapedio'
+        },
+        q6 = {
+            text: 'Quali fra questi elementi dell\'orecchio rappresenta un sistema di protezione dai suoni ad altissimo volume?',
+            answers: [
+                'Padiglione auricolare',
+                'Condotto uditivo ',
+                'Timpano',
+                'Martello',
+                'Incudine',
+                'Staffa',
+                'Tromba di Eustachio',
+                'Muscolo Stapedio',
+                'Coclea',
+                'Labirinto'
+            ],
+            right: 'Tromba di Eustachio'
+        },
+        q7 = {
+            text: 'Quali fra questi elementi dell\'orecchio serve per restare in equilibrio?',
+            answers: [
+                'Padiglione auricolare',
+                'Condotto uditivo ',
+                'Timpano',
+                'Martello',
+                'Incudine',
+                'Staffa',
+                'Tromba di Eustachio',
+                'Muscolo Stapedio',
+                'Coclea',
+                'Labirinto'
+            ],
+            right: 'Labirinto'
+        },
+        q8 = {
+            text: 'Quali fra questi elementi dell\'orecchio serve a trasformare i segnali sonori in nervosi?',
+            answers: [
+                'Padiglione auricolare',
+                'Condotto uditivo ',
+                'Timpano',
+                'Martello',
+                'Incudine',
+                'Staffa',
+                'Tromba di Eustachio',
+                'Muscolo Stapedio',
+                'Coclea',
+                'Labirinto'
+            ],
+            right: 'Coclea'
+        },
+        q9 = {
+            text: 'Martello, Incudine e Staffa sono...',
+            answers: [
+                'Un sistema rigido e solidale per trasmettere le vibrazioni dall\'orecchio esterno a quello interno',
+                'Tre parti molli attraverso cui la vibrazione viene amplificata',
+                'Un sistema di leve per trasmettere le vibrazioni dall\'orecchio esterno a quello interno',
+                'Un sistema che permette di amplificare le piccole vibrazioni',
+                'Un sistema per proteggere l\'orecchio da suoni ad alta intensità',
+                'Situati nell\'orecchio esterno',
+                'Situati nell\'orecchio medio',
+                'Situati nell\'orecchio interno'
+            ],
+            right: [
+                'Un sistema di leve per trasmettere le vibrazioni dall\'orecchio esterno a quello interno',
+                'Un sistema che permette di amplificare le piccole vibrazioni',
+                'Situati nell\'orecchio medio'
+            ]
+        },
+        q10 = {
+            text: 'Secondo il dlgs 81/2008, al di sotto degli 80dB...',
+            answers: [
+                'Non c\'è obbligo di utilizzare i DPI (che non sono neanche consigliati)',
+                'I DPI sono consigliati',
+                'I DPI sono obbligatori',
+                'L\'informazione e la formazione sono consigliate ma non obbligatorie',
+                'C\'è obbligo di informazione e formazione'
+            ],
+            right: [
+                'Non c\'è obbligo di utilizzare i DPI (che non sono neanche consigliati)',
+                'L\'informazione e la formazione sono consigliate ma non obbligatorie'
+            ]
+        },
+        q11 = {
+            text: 'Secondo il dlgs 81/2008, fra 80 e 85 dB...',
+            answers: [
+                'Non c\'è obbligo di utilizzare i DPI (che non sono neanche consigliati)',
+                'I DPI sono consigliati',
+                'I DPI sono obbligatori',
+                'L\'informazione e la formazione sono consigliate ma non obbligatorie',
+                'C\'è obbligo di informazione e formazione'
+            ],
+            right: [
+                'I DPI sono consigliati',
+                'C\'è obbligo di informazione e formazione'
+            ]
+        },
+        q12 = {
+            text: 'Secondo il dlgs 81/2008, oltre 85 dB...',
+            answers: [
+                'Non c\'è obbligo di utilizzare i DPI (che non sono neanche consigliati)',
+                'I DPI sono consigliati',
+                'I DPI sono obbligatori',
+                'L\'informazione e la formazione sono consigliate ma non obbligatorie',
+                'C\'è obbligo di informazione e formazione'
+            ],
+            right: [
+                'I DPI sono obbligatori',
+                'C\'è obbligo di informazione e formazione'
+            ]
+        },
+        q13 = {
+            text: 'Secondo il dlgs 81/2008, il limite massimo di 87dB si riferisce a...',
+            answers: [
+                'Una condizione in cui non è più consentito lavorare',
+                'I dB percepiti senza DPI',
+                'I dB percepiti se muniti di DPI',
+                'Un limite vicinissimo al limite massimo di 85dB oltre il quale adottare i DPC',
+                'Il limite dopo il quale i DPC diventano da consigliati a obbligatori'
+            ],
+            right: [
+                'Una condizione in cui non è più consentito lavorare',
+                'I dB percepiti se muniti di DPI'
+            ]
+        },
+        q14 = {
+            text: 'Il Quizzone finale: quali fra queste affermazioni sulla coclea sono vere?',
+            answers: [
+                'La coclea è piena di un liquido',
+                'Nella coclea, i canali superiore, inferiore e mediano sono collegati',
+                'La vibrazione che entra nella coclea si esaurisce al suo interno dopo che viene recepita',
+                'La membrana tettoria copre la membrana basilare',
+                'La membrana basilare è più spessa vicino all\'orecchio medio',
+                'La membrana basilare è più spessa vicino l\'elicotrema (il centro della chiocciola)',
+                'Nell\'organo di Corti ci sono circa 2.000 ciglia',
+                'Nell\'organo di Corti ci sono circa 20.000 ciglia',
+                'Nell\'organo di Corti ci sono circa 200.000 ciglia',
+                'Nell\'organo di Corti ci sono circa 2.000.000 di ciglia',
+                'Le basse frequenze sono percepite meglio vicino all\'orecchio medio',
+                'Le basse frequenze sono percepite meglio vicino l\'elicotrema (il centro della chiocciola)'
+            ],
+            right: [
+                'La staffa è in contatto con la finestra ovale',
+                'La vibrazione entra nella coclea dal canale superiore (rampa vestibulare)',
+                'La coclea è piena di un liquido',
+                'Nella coclea, i canali superiore, inferiore e mediano sono collegati',
+                'La membrana tettoria copre la membrana basilare',
+                'La membrana basilare è più spessa vicino l\'elicotrema (il centro della chiocciola)',
+                'Nell\'organo di Corti ci sono circa 20.000 ciglia',
+                'Le basse frequenze sono percepite meglio vicino l\'elicotrema (il centro della chiocciola)'
+            ]
+        }
+    ],
+    auto8 = [
+        q1 = {
+            text: 'La Frequenza influisce su...',
+            answers: [
+                'Volume alto o basso',
+                'Suono acuto o grave',
+                'Timbro o armonia del suono'
+            ],
+            right: 'Suono acuto o grave'
+        },
+        q2 = {
+            text: 'L\'Ampiezza influisce su...',
+            answers: [
+                'Suono acuto o grave',
+                'Timbro o armonia del suono',
+                'Volume alto o basso'
+            ],
+            right: 'Volume alto o basso'
+        },
+        q3 = {
+            text: 'Lo Spettro influisce su...',
+            answers: [
+                'Suono acuto o grave',
+                'Timbro o armonia del suono',
+                'Volume alto o basso'
+            ],
+            right: 'Timbro o armonia del suono'
+        },
+        q4 = {
+            text: 'Nella definizione di Sound Intensity Level (SIL) il valore di intensità I_0 ("i con zero") è riferito ad un\'onda di frequenza...',
+            answers: [
+                '0 Hz',
+                '50 Hz',
+                '100 Hz',
+                '250 Hz',
+                '500 Hz',
+                '1000 Hz',
+                '5000 Hz',
+                '10kHz',
+                '20kHz'
+            ],
+            right: '1000 Hz'
+        },
+        q5 = {
+            text: 'Una frequenza pari a 1kHz con 50dB SIL ha un volume di...',
+            answers: [
+                '0 phon',
+                '10 phon',
+                '20 phon',
+                '30 phon',
+                '40 phon',
+                '50 phon'
+            ],
+            right: '50 phon'
+        },
+        q6 = {
+            text: 'Una frequenza pari a 1kHz con 30dB SIL ha un volume di...',
+            answers: [
+                '0 phon',
+                '10 phon',
+                '20 phon',
+                '30 phon',
+                '40 phon',
+                '50 phon'
+            ],
+            right: '30 phon'
+        },
+        q7 = {
+            text: 'Rispetto alla Figura 1, la zona tratteggiata a sinistra indica...',
+            answers: [
+                'I suoni percepiti col volume più alto',
+                'Suoni non udibili',
+                'I suoni a bassa frequenza',
+                'Tutti suoni a 40 phon',
+                'Suoni che hanno bisogno di un\'energia maggiore per essere uditi'
+            ],
+            right: [
+                'I suoni a bassa frequenza',
+                'Suoni che hanno bisogno di un\'energia maggiore per essere uditi'
+            ],
+            img: 'assets/img/fig3.png'
+        },
+        q8 = {
+            text: 'Rispetto alla Figura 1, i punti P, Q, e R indicano...',
+            answers: [
+                '3 suoni a 50dB',
+                '3 suoni percepiti con lo stesso volume',
+                '3 suoni con la stessa frequenza',
+                'Lo stesso suono'
+            ],
+            right: '3 suoni percepiti con lo stesso volume',
+            img: 'assets/img/fig3.png'
+        },
+        q9 = {
+            text: 'Rispetto alla Figura 1, qual è il range di frequenze in cui l\'orecchio umano risulta essere più sensibile?',
+            answers: [
+                'Quello in cui l\'energia richiesta per udire il suono è minore',
+                'Quelle in cui l\'energia richiesta per udire il suono è maggiore',
+                'Quelle nella zona tratteggiata a sinistra',
+                'Fra 100 e 1000 Hz',
+                'Fra 2000 e 10000Hz'
+            ],
+            right: [
+                'Quello in cui l\'energia richiesta per udire il suono è minore',
+                'Fra 2000 e 10000Hz'
+            ],
+            img: 'assets/img/fig3.png'
+        },
+        q10 = {
+            text: 'Rispetto alla Figura 1, sono ammessi valori di dB negativi?',
+            answers: [
+                'Vero',
+                'Falso'
+            ],
+            right: 'Vero',
+            img: 'assets/img/fig3.png'
+        },
+        q11 = {
+            text: 'Rispetto alla Figura 1, sono ammessi valori di phon negativi?',
+            answers: [
+                'Vero',
+                'Falso'
+            ],
+            right: 'Falso',
+            img: 'assets/img/fig3.png'
+        },
+        q12 = {
+            text: 'Per "frequenza fantasma" si intende...',
+            answers: [
+                'La frequenza fondamentale di un suono all\'interno di uno spettro complesso in cui non si è in grado di distinguere un\'unica frequenza dominante',
+                'La frequenza di un rumore che attenua il segnale sonoro',
+                'Un suono ad altissima frequenza che ne attenua uno a bassissima frequenza'
+            ],
+            right: 'La frequenza fondamentale di un suono all\'interno di uno spettro complesso in cui non si è in grado di distinguere un\'unica frequenza dominante'
+        },
+        q13 = {
+            text: 'Indicare le affermazioni corrette:',
+            answers: [
+                'La differenza ITD è relativa alla frequenza',
+                'La differenza ITD è relativa alla fase',
+                'La differenza ITD è relativa all\'ampiezza',
+                'La differenza ITD è relativa allo spettro',
+                'La differenza IID (o ILD) è relativa alla frequenza',
+                'La differenza IID (o ILD) è relativa alla fase',
+                'La differenza IID (o ILD) è relativa all\'ampiezza',
+                'La differenza IID (o ILD) è relativa allo spettro'
+            ],
+            right: [
+                'La differenza ITD è relativa alla fase',
+                'La differenza IID (o ILD) è relativa all\'ampiezza',
+                'La differenza IID (o ILD) è relativa allo spettro'
+            ]
+        }
+    ],
+    auto9 = [
+        q1 = {
+            text: 'Il principale determinante fisico del timbro è...',
+            answers: [
+                'La frequenza fondamentale',
+                'La frequenza di Nyquist',
+                'L\'armonica fondamentale',
+                'Il contenuto armonico'
+            ],
+            right: 'Il contenuto armonico'
+        },
+        q2 = {
+            text: 'Indicare le affermazioni vere:',
+            answers: [
+                'Il tremolo è una variazione periodica della frequenza di una nota',
+                'Il tremolo è una variazione periodica dell\'ampiezza di una nota',
+                'Il vibrato è una variazione periodica dell\'altezza di una nota',
+                'Il vibrato è una variazione periodica dell\'ampiezza di una nota'
+            ],
+            right: [
+                'Il tremolo è una variazione periodica dell\'ampiezza di una nota',
+                'Il vibrato è una variazione periodica dell\'altezza di una nota'
+            ]
+        },
+        q3 = {
+            text: 'Facendo riferimento alla Figura 1, indicare l\'affermazione vera:',
+            answers: [
+                'La traccia A rappresenta un Vibrato, mentre la traccia B rappresenta un Tremolo',
+                'La traccia A rappresenta un Tremolo, mentre la traccia B rappresenta un Vibrato'
+            ],
+            right: 'La traccia A rappresenta un Tremolo, mentre la traccia B rappresenta un Vibrato',
+            img: 'assets/img/fig4.png'
+        },
+        q4 = {
+            text: 'La larghezza di banda critica di un segnale da 350Hz è...',
+            answers: [
+                'Più di 5000Hz',
+                '5000Hz',
+                '2500Hz',
+                '1000Hz',
+                '750Hz',
+                '500Hz',
+                '250Hz',
+                '100Hz',
+                '0Hz'
+            ],
+            right: '100Hz'
+        },
+        q5 = {
+            text: 'La larghezza di banda critica di un segnale da 1250Hz è...',
+            answers: [
+                'Più di 5000Hz',
+                '5000Hz',
+                '2500Hz',
+                '1000Hz',
+                '750Hz',
+                '500Hz',
+                '250Hz',
+                '100Hz',
+                '0Hz'
+            ],
+            right: '250Hz'
+        },
+        q6 = {
+            text: 'La larghezza di banda critica di un segnale da 15kHz è...',
+            answers: [
+                'Più di 5000Hz',
+                '5000Hz',
+                '2500Hz',
+                '1000Hz',
+                '750Hz',
+                '500Hz',
+                '250Hz',
+                '100Hz',
+                '0Hz'
+            ],
+            right: 'Più di 5000Hz'
+        },
+        q7 = {
+            text: 'Quante sono le bande critiche definite nella Scala di Bark mostrata a lezione?',
+            answers: [
+                '14',
+                '21',
+                '22',
+                '23',
+                '24',
+                '25'
+            ],
+            right: '24'
+        },
+        q8 = {
+            text: 'Facendo riferimento alla Figura 2, quali sono le bande più piccole?',
+            answers: [
+                'Quelle a sinistra del grafico',
+                'Quelle a destra nel grafico',
+                'Bel tentativo! Tutte le bande di Bark hanno la stessa grandezza!'
+            ],
+            right: '24',
+            img: 'assets/img/fig5.png'
+        },
+        q9 = {
+            text: 'Con riferimento alla Figura 3, quali di queste frasi sul mascheramento non tonale con rumore a banda larga sono vere:',
+            answers: [
+                'Test tone emessi con 60dB sono mascherati da rumore a 60dB',
+                'Test tone emessi con 60dB sono mascherati da rumore a 50dB',
+                'Test tone emessi con 60dB potrebbero essere mascherati da rumore a 40dB',
+                'Test tone emessi con 60dB sono mascherati da rumore a 30dB',
+                'Test tone emessi con 60dB sono mascherati da rumore a 20dB'
+            ],
+            right: [
+                'Test tone emessi con 60dB sono mascherati da rumore a 60dB',
+                'Test tone emessi con 60dB sono mascherati da rumore a 50dB',
+                'Test tone emessi con 60dB potrebbero essere mascherati da rumore a 40dB',
+            ],
+            img: 'assets/img/fig6.png'
+        },
+        q10 = {
+            text: 'Aiutandoti con la Figura 3, quali di queste frasi sul mascheramento non tonale con rumore a banda larga sono vere:',
+            answers: [
+                'Questo mascheramento mostra un comportamento lineare',
+                'Questo mascheramento mostra un comportamento quadratico',
+                'Questo mascheramento mostra un comportamento logaritmico'
+            ],
+            right: 'Questo mascheramento mostra un comportamento lineare',
+            img: 'assets/img/fig6.png'
+        },
+        q11 = {
+            text: 'Aiutandoti con la Figura 3, in generale, il mascheramento non tonale con rumore a banda larga...',
+            answers: [
+                'Maschera meglio le basse frequenze',
+                'Maschera meglio le frequenze medie',
+                'Maschera meglio le alte frequenze',
+                'Maschera in maniera simile tutte le frequenze',
+                'Nessuna delle precedenti'
+            ],
+            right: 'Maschera in maniera simile tutte le frequenze',
+            img: 'assets/img/fig6.png'
+        },
+        q12 = {
+            text: 'Con riferimento alla Figura 4, quali di queste frasi sul mascheramento non tonale con rumore a banda stretta sono vere:',
+            answers: [
+                'Test tone di 5kHz emessi con 60dB sono mascherati da rumore a 80dB',
+                'Test tone di 2kHz emessi con 40dB sono mascherati da rumore a 80dB',
+                'Test tone di 0.5kHz emessi con 20dB sono mascherati da rumore a 60dB',
+                'Test tone di 10kHz emessi con 20dB sono mascherati da rumore a 80dB',
+                'Test tone di 10kHz emessi con 20dB sono mascherati da rumore a 100dB',
+                'Test tone di 10kHz emessi con 30dB sono mascherati da rumore a 100dB',
+                'Test tone di 10kHz emessi con 40dB sono mascherati da rumore a 100dB'
+            ],
+            right: [
+                'Test tone di 2kHz emessi con 40dB sono mascherati da rumore a 80dB',
+                'Test tone di 10kHz emessi con 20dB sono mascherati da rumore a 100dB',
+                'Test tone di 10kHz emessi con 30dB sono mascherati da rumore a 100dB'
+            ],
+            img: 'assets/img/fig7.png'
+        },
+        q13 = {
+            text: 'Aiutandoti con la Figura 4, in generale, il mascheramento non tonale con rumore a banda stretta...',
+            answers: [
+                'Maschera meglio le basse frequenze',
+                'Maschera meglio le frequenze medie',
+                'Maschera meglio le alte frequenze',
+                'Maschera in maniera simile tutte le frequenze',
+                'Nessuna delle precedenti'
+            ],
+            right: 'Maschera meglio le alte frequenze',
+            img: 'assets/img/fig7.png'
+        },
+        q14 = {
+            text: 'Con riferimento alla Figura 5, quali di queste frasi sul mascheramento tonale con tono semplice sono vere:',
+            answers: [
+                'Test tone di 1.14kHz emessi con 30dB sono mascherati da rumore a 60dB',
+                'Test tone di 1.14kHz emessi con 30dB sono mascherati da rumore a 50dB',
+                'Test tone di 1.14kHz emessi con 20dB sono mascherati da rumore a 60dB',
+                'Test tone di 1.14kHz emessi con 20dB sono mascherati da rumore a 50dB',
+                'Test tone di 0.85kHz emessi con 30dB sono mascherati da rumore a 60dB',
+                'Test tone di 0.85kHz emessi con 30dB sono mascherati da rumore a 50dB',
+                'Test tone di 0.85kHz emessi con 30dB sono mascherati da rumore a 40dB'
+            ],
+            right: [
+                'Test tone di 1.14kHz emessi con 30dB sono mascherati da rumore a 60dB',
+                'Test tone di 1.14kHz emessi con 20dB sono mascherati da rumore a 60dB',
+                'Test tone di 1.14kHz emessi con 20dB sono mascherati da rumore a 50dB'
+            ],
+            img: 'assets/img/fig8.png'
+        },
+        q15 = {
+            text: 'Aiutandoti con la Figura 5, in generale, il mascheramento tonale con tono semplice...',
+            answers: [
+                'Maschera sempre meglio le basse frequenze',
+                'Maschera sempre meglio le frequenze medie',
+                'Maschera sempre meglio le alte frequenze',
+                'Maschera in maniera simile tutte le frequenze',
+                'Nessuna delle precedenti'
+            ],
+            right: 'Maschera sempre meglio le frequenze medie',
+            img: 'assets/img/fig8.png'
+        },
+        q16 = {
+            text: 'Confrontando mascheramento non tonale con rumore a banda stretta e mascheramento tonale con tono semplice, quale fra queste frasi è vera?',
+            answers: [
+                'Il mascheramento tonale impone una soglia più alta, ma è meno efficace per le alte frequenze',
+                'Il mascheramento non tonale impone una soglia più alta, ma è meno efficace per le alte frequenze'
+            ],
+            right: 'Il mascheramento non tonale impone una soglia più alta, ma è meno efficace per le alte frequenze'
+        },
+        q17 = {
+            text: 'Nella "Tuning Curve" del mascheramento tonale con tono semplice...',
+            answers: [
+                'Il test tone è fisso',
+                'Il test tone è variabile',
+                'il masking tone è fisso',
+                'il masking tone è variabile'
+            ],
+            right: [
+                'Il test tone è fisso',
+                'il masking tone è variabile',
+            ]
         }
     ]
 ];

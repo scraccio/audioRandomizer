@@ -19,8 +19,8 @@ function menuButtonOnclick(){
             checked.push(arr[i].value);
         }
     }
-    document.querySelector('.menu-custom').remove();
     if(checked.length > 0){
+        document.querySelector('.menu-custom').remove();
         var array = [];
         var tests = checked;
         var autoArray = [];
