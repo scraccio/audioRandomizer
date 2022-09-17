@@ -588,7 +588,8 @@ var autovalues = [
                 'sarà più difficile percepire il suono',
                 'non ci saranno variazioni nella percezione del suono',
             ],
-            right: 'sarà più difficile percepire il suono'
+            right: 'sarà più difficile percepire il suono',
+            img: 'assets/img/fig1.png'
         },
         q5 = {
             text: 'Affinché si verifichi la riflessione:',
@@ -1115,7 +1116,7 @@ var autovalues = [
             right: 'Muscolo Stapedio'
         },
         q6 = {
-            text: 'Quali fra questi elementi dell\'orecchio rappresenta un sistema di protezione dai suoni ad altissimo volume?',
+            text: 'Quali fra questi elementi dell\'orecchio serve per bilanciare la pressione interna con quella esterna?',
             answers: [
                 'Padiglione auricolare',
                 'Condotto uditivo ',
@@ -1515,7 +1516,7 @@ var autovalues = [
                 'Quelle a destra nel grafico',
                 'Bel tentativo! Tutte le bande di Bark hanno la stessa grandezza!'
             ],
-            right: '24',
+            right: 'Quelle a sinistra del grafico',
             img: 'assets/img/fig5.png'
         },
         q9 = {
