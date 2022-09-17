@@ -1886,7 +1886,7 @@ var autovalues = [
             right: '> 60dB'
         },
         q11 = {
-            text: 'Valori sufficientemente buoni di SQNR si hanno per...',
+            text: 'I dispositivi digitali hanno valori di SQNR...',
             answers: [
                 '> 20dB',
                 '> 40dB',
