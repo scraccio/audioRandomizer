@@ -1,4 +1,5 @@
 var len;
+var data;
 
 function shuffleArray(array){
     for (var i = array.length - 1; i > 0; i--) {
@@ -10,13 +11,108 @@ function shuffleArray(array){
     return array;
 }
 
+function menuButtonOnclick(){
+    let arr = document.querySelectorAll('.content-element > input');
+    let checked = [];
+    for(let i=0; i<arr.length; i++){
+        if(arr[i].checked){
+            checked.push(arr[i].value);
+        }
+    }
+    document.querySelector('.menu-custom').remove();
+    if(checked.length > 0){
+        var array = [];
+        var tests = checked;
+        var autoArray = [];
+        for(let i=0; i<tests.length; i++){
+            autoArray.push(parseInt(tests[i]));
+        }
+        autoArray.sort(function(a, b) {
+            return a - b;
+        });
+        for(let i=0; i<autoArray.length; i++){
+            array = array.concat(autovalues[autoArray[i] - 1]);
+        }
+        if(len.length != 0){
+            data = array.slice(0, parseInt(len));
+            createTest(array.slice(0, parseInt(len)));
+        }
+        else{
+            data = array;
+            createTest(array);
+        }
+    }
+}
+
+function submitButtonOnclick(){
+    let items = document.querySelectorAll('.answers-div');
+    let score = 0;
+
+    let countChecked = 0;
+    for(let i=0; i<items.length; i++){
+        let check = 0;
+        for(let j=0; j<items[i].querySelectorAll('input').length; j++){
+            if(items[i].querySelectorAll('input')[j].checked){
+                check = 1;
+            }
+        }
+        if(check == 1){
+            countChecked++;
+        }
+        else{
+            $(items[i]).parent()[0].scrollIntoView({behavior: "smooth"});
+            break;
+        }
+    }
+    if(countChecked == items.length){
+        for(let i=0; i<items.length; i++){
+            let type = items[i].querySelector('input').type;
+            if(type == "radio"){
+                for(let j=0; j<items[i].querySelectorAll('.answer').length; j++){
+                    if(items[i].querySelectorAll('.answer')[j].querySelector('input').checked){
+                        if(items[i].querySelectorAll('.answer')[j].querySelector('input').value == data[i].right){
+                            score++;
+                        }
+                        else{
+                            console.log('Risposta ' + (i+1) + ' errata');
+                            $(items[i]).parent()[0].style.backgroundColor = 'rgba(218, 17, 17, 0.1)';
+                        }
+                        break;
+                    }
+                }
+            }
+            if(type == "checkbox"){
+                var answers = [];
+                for(let j=0; j<items[i].querySelectorAll('.answer').length; j++){
+                    if(items[i].querySelectorAll('.answer')[j].querySelector('input').checked){
+                        answers.push(items[i].querySelectorAll('.answer')[j].querySelector('input').value);
+                    }
+                }
+                if(answers.length > 0){
+                    answers = answers.sort();
+                    data[i].right = data[i].right.sort();
+                    if((Array.isArray(answers) && Array.isArray(data[i].right))
+                    && (answers.length == data[i].right.length)
+                    && (answers.every(function(element, index){
+                        return element === data[i].right[index];
+                    }))){
+                        score++;
+                    }
+                    else{
+                        console.log('Risposta ' + (i+1) + ' errata');
+                    }
+                }
+            }
+        }
+        console.log("Punteggio: " + score);
+        viewSolutions(score, items.length);
+    }
+}
+
 function createTest(data){
 
     data = shuffleArray(data);
-    
-
-    for(let i=0; i<len; i++){
-        console.log(len)
+    for(let i=0; i<data.length; i++){
         let questionDiv = document.createElement('div');
         questionDiv.className = 'question-div';
         document.querySelector('.main-test').appendChild(questionDiv);
@@ -59,70 +155,7 @@ function createTest(data){
 
     let submitButton = document.createElement('div');
     submitButton.className = 'submit-button';
-    submitButton.onclick = ()=>{
-        let items = document.querySelectorAll('.answers-div');
-        let score = 0;
-
-        let countChecked = 0;
-        for(let i=0; i<items.length; i++){
-            let check = 0;
-            for(let j=0; j<items[i].querySelectorAll('input').length; j++){
-                if(items[i].querySelectorAll('input')[j].checked){
-                    check = 1;
-                }
-            }
-            if(check == 1){
-                countChecked++;
-            }
-            else{
-                $(items[i]).parent()[0].scrollIntoView({behavior: "smooth"});
-                break;
-            }
-        }
-        if(countChecked == items.length){
-            for(let i=0; i<items.length; i++){
-                let type = items[i].querySelector('input').type;
-                if(type == "radio"){
-                    for(let j=0; j<items[i].querySelectorAll('.answer').length; j++){
-                        if(items[i].querySelectorAll('.answer')[j].querySelector('input').checked){
-                            if(items[i].querySelectorAll('.answer')[j].querySelector('input').value == data[i].right){
-                                score++;
-                            }
-                            else{
-                                console.log('Risposta ' + (i+1) + ' errata');
-                                $(items[i]).parent()[0].style.backgroundColor = 'rgba(218, 17, 17, 0.1)';
-                            }
-                            break;
-                        }
-                    }
-                }
-                if(type == "checkbox"){
-                    var answers = [];
-                    for(let j=0; j<items[i].querySelectorAll('.answer').length; j++){
-                        if(items[i].querySelectorAll('.answer')[j].querySelector('input').checked){
-                            answers.push(items[i].querySelectorAll('.answer')[j].querySelector('input').value);
-                        }
-                    }
-                    if(answers.length > 0){
-                        answers = answers.sort();
-                        data[i].right = data[i].right.sort();
-                        if((Array.isArray(answers) && Array.isArray(data[i].right))
-                        && (answers.length == data[i].right.length)
-                        && (answers.every(function(element, index){
-                            return element === data[i].right[index];
-                        }))){
-                            score++;
-                        }
-                        else{
-                            console.log('Risposta ' + (i+1) + ' errata');
-                        }
-                    }
-                }
-            }
-            console.log("Punteggio: " + score);
-            viewSolutions(score, items.length);
-        }
-    }
+    submitButton.onclick = submitButtonOnclick;
     document.querySelector('.main-test').appendChild(submitButton);
 
     let submitButtonText = document.createElement('div');
@@ -148,7 +181,7 @@ function viewSolutions(score, all){
 
 }
 
-document.querySelector('.menu > :first-child').onclick = ()=>{
+function completeTestButton(){
     len = document.querySelector('.cell').textContent;
     document.querySelector('.main').remove();
 
@@ -161,10 +194,17 @@ document.querySelector('.menu > :first-child').onclick = ()=>{
     for(let i=0; i<autovalues.length; i++){
         array = array.concat(autovalues[i]);
     }
-    createTest(array);
+    if(len.length != 0){
+        data = array.slice(0, parseInt(len));
+        createTest(array.slice(0, parseInt(len)));
+    }
+    else{
+        data = array;
+        createTest(array);
+    }
 }
 
-document.querySelector('.menu > :last-child').onclick = ()=>{
+function customTestButton(){
     len = document.querySelector('.cell').textContent;
     document.querySelector('.main').remove();
 
@@ -194,36 +234,50 @@ document.querySelector('.menu > :last-child').onclick = ()=>{
 
     var menuButton = document.createElement('div');
     menuButton.className = 'menu-button';
-    menuButton.onclick = ()=>{
-        let arr = document.querySelectorAll('.content-element > input');
-        let checked = [];
-        for(let i=0; i<arr.length; i++){
-            if(arr[i].checked){
-                checked.push(arr[i].value);
-            }
-        }
-        document.querySelector('.menu-custom').remove();
-        if(checked.length > 0){
-            var array = [];
-            var tests = checked;
-            var autoArray = [];
-            for(let i=0; i<tests.length; i++){
-                autoArray.push(parseInt(tests[i]));
-            }
-            autoArray.sort(function(a, b) {
-                return a - b;
-            });
-            for(let i=0; i<autoArray.length; i++){
-                array = array.concat(autovalues[autoArray[i] - 1]);
-            }
-            createTest(array);
-        }
-    }
+    menuButton.onclick = menuButtonOnclick;
     menuCustom.appendChild(menuButton);
 
     var menuButtonText = document.createElement('div');
     menuButtonText.className = 'menu-button-text';
     menuButtonText.textContent = 'Inizia';
     menuButton.appendChild(menuButtonText);
-
 }
+
+function homeButton(){
+    if(document.querySelector('.main-test') && !document.querySelector('.menu-custom')){
+        document.querySelector('.main-test').remove();
+        document.body.innerHTML += `<div class="main">
+                                        <div class="title">Benvenuto.<br>Seleziona una modalità:</div>
+                                        <div class="menu-entry2">Inserisci il numero di domande</div>
+                                            <div contenteditable="true" class="cell"></div>
+                                        <div class="menu">
+                                            <div class="menu-entry">Genera un test completo</div>
+                                            <div class="menu-entry">Genera un test customizzato</div>
+                                        </div>
+                                    </div>`;
+        document.querySelector('.menu > :first-child').onclick = completeTestButton;
+        document.querySelector('.menu > :last-child').onclick = customTestButton;
+        document.querySelector('.home-button').onclick = homeButton;
+    }
+
+    if(document.querySelector('.main-test') && document.querySelector('.menu-custom')){
+        document.querySelector('.main-test').remove();
+        document.querySelector('.menu-custom').remove();
+        document.body.innerHTML += `<div class="main">
+                                        <div class="title">Benvenuto.<br>Seleziona una modalità:</div>
+                                        <div class="menu-entry2">Inserisci il numero di domande</div>
+                                            <div contenteditable="true" class="cell"></div>
+                                        <div class="menu">
+                                            <div class="menu-entry">Genera un test completo</div>
+                                            <div class="menu-entry">Genera un test customizzato</div>
+                                        </div>
+                                    </div>`;
+        document.querySelector('.menu > :first-child').onclick = completeTestButton;
+        document.querySelector('.menu > :last-child').onclick = customTestButton;
+        document.querySelector('.home-button').onclick = homeButton;
+    }
+}
+
+document.querySelector('.menu > :first-child').onclick = completeTestButton;
+document.querySelector('.menu > :last-child').onclick = customTestButton;
+document.querySelector('.home-button').onclick = homeButton;
