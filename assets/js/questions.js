@@ -1241,11 +1241,13 @@ var autovalues = [
             text: 'Il Quizzone finale: quali fra queste affermazioni sulla coclea sono vere?',
             answers: [
                 'La staffa è in contatto con la finestra ovale',
+                'La staffa è in contatto con la finestra rotonda',
                 'La coclea è piena di un liquido',
                 'Nella coclea, i canali superiore, inferiore e mediano sono collegati',
                 'La vibrazione che entra nella coclea si esaurisce al suo interno dopo che viene recepita',
                 'La membrana tettoria copre la membrana basilare',
                 'La vibrazione entra nella coclea dal canale superiore (rampa vestibulare)',
+                'La vibrazione entra nella coclea dal canale inferiore (rampa timpanica)',
                 'La membrana basilare è più spessa vicino all\'orecchio medio',
                 'La membrana basilare è più spessa vicino l\'elicotrema (il centro della chiocciola)',
                 'Nell\'organo di Corti ci sono circa 2.000 ciglia',
@@ -2621,7 +2623,7 @@ var autovalues = [
             ]
         },
         q9 = {
-            text: 'Quali di queste affermazoni sul layer I di MPEG-1 sono vere:',
+            text: 'Il Layer I di MPEG-1 applica una Codifica per Bande',
             answers: [
                 'Vero',
                 'Falso'
