@@ -106,9 +106,11 @@ html, body{
 
 .answer{
     font-size: 1vw;
+    display: flex;
+    flex-direction: row;
 }
 
-.submit-button{
+.submit-button, .retake-div{
     position: relative;
     width: 200px;
     height: 40px;
@@ -126,7 +128,7 @@ html, body{
     background-color: rgb(111, 74, 153);
 }
 
-.submit-button-text{
+.submit-button-text, .retake-text{
     font-size: 1.3vw;
     color: white;
 }
@@ -198,7 +200,7 @@ html, body{
     width: 150px;
     height: 30px;
     border-radius: 10px;
-    border: 1px solid black;
+    border: 2px solid black;
     font-size: 25px;
     outline: none;
     padding: 10px;
@@ -248,7 +250,7 @@ html, body{
         font-size: 3.5vw;
     }
 
-    .submit-button-text{
+    .submit-button-text, .retake-text{
         font-size: 3vw;
     }
 }

@@ -149,7 +149,6 @@ function submitButtonOnclick(){
                 }
             }
         }
-        console.log("Punteggio: " + score);
         viewSolutions(score, items.length);
     }
 }
@@ -188,14 +187,19 @@ function createTest(){
             let answer = document.createElement('div');
             answer.className = 'answer';
             if(Array.isArray(data[i].right)){
-                answer.innerHTML = '<input type="checkbox" value="' + data[i].answers[j] + '" name="answer-' + (i+1) + '">' + data[i].answers[j];
+                answer.innerHTML = '<input type="checkbox" value="' + data[i].answers[j] + '" name="answer-' + (i+1) + '"><div class="answer-text">' + data[i].answers[j] + '</div>';
             }
             else{
-                answer.innerHTML = '<input type="radio" value="' + data[i].answers[j] + '" name="answer-' + (i+1) + '">' + data[i].answers[j];
+                answer.innerHTML = '<input type="radio" value="' + data[i].answers[j] + '" name="answer-' + (i+1) + '"><div class="answer-text">' + data[i].answers[j] + '</div>';
             }
-            answer.onclick = ()=>{
-                answer.querySelector('input').checked = !answer.querySelector('input').checked;
-            };
+            answer.querySelector('div').onclick = (e)=>{
+                if(!$(e.currentTarget).parent()[0].querySelector('input').checked){
+                    $(e.currentTarget).parent()[0].querySelector('input').checked = true;
+                }
+                else if($(e.currentTarget).parent()[0].querySelector('input').type == 'checkbox'){
+                    $(e.currentTarget).parent()[0].querySelector('input').checked = !$(e.currentTarget).parent()[0].querySelector('input').checked;
+                }
+            }
             answersDiv.appendChild(answer);
         }
     }
@@ -225,6 +229,32 @@ function viewSolutions(score, all){
     resultDiv.className = 'result-div';
     resultDiv.textContent = score + '/' + all;
     $(resultDiv).insertBefore(document.querySelector('.question-div'));
+
+    var retakeButton = document.createElement('div');
+    retakeButton.className = 'retake-div';
+    retakeButton.onclick = ()=>{
+        document.querySelector('.main-test').innerHTML = '';
+        var array = [];
+        for(let i=0; i<autovalues.length-1; i++){
+            array = array.concat(autovalues[i]);
+        }
+        data = shuffleArray(array);
+        if(len.length != 0){
+            data = array.slice(0, parseInt(len));
+            createTest();
+        }
+        else{
+            data = array.slice(0, 20);
+            data.push(autovalues[autovalues.length - 1][Math.floor(Math.random() * autovalues[autovalues.length - 1].length)]);
+            createTest();
+        }
+    }
+    $(retakeButton).insertBefore(document.querySelector('.question-div'));
+
+    var retakeButtonText = document.createElement('div');
+    retakeButtonText.className = 'retake-text';
+    retakeButtonText.textContent = 'Rigenera test';
+    retakeButton.appendChild(retakeButtonText);
 
 }
 
@@ -277,7 +307,7 @@ function customTestButton(){
     var element = document.createElement('div');
     element.className = 'content-element';
     element.innerHTML = '<input type="checkbox" name="elements" value="all">Tutte';
-    element.querySelector('input').onclick = (e)=>{
+    element.onclick = (e)=>{
         if(e.currentTarget.checked == true){
             for(let i=1; i<document.querySelectorAll('input').length; i++){
                 document.querySelectorAll('input')[i].checked = true;
