@@ -104,6 +104,8 @@ function submitButtonOnclick(){
                 if(answers.length > 0){
                     answers = answers.sort();
                     data[i].right = data[i].right.sort();
+                    console.log(answers);
+                    console.log(data[i].right);
                     if((Array.isArray(answers) && Array.isArray(data[i].right))
                     && (answers.length == data[i].right.length)
                     && (answers.every(function(element, index){

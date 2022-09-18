@@ -2030,23 +2030,23 @@ var autovalues = [
         q10 = {
             text: 'Nei filtri di peaking, quali delle seguenti affermazioni sulla Q sono vere?',
             answers: [
-                'La Q è detta "Bandwidth"',
-                'La Q è detta "Quality Factor"',
+                'La Q è detta \'Bandwidth\'',
+                'La Q è detta \'Quality Factor\'',
                 'La Q indica la curtosi del filtro di peaking',
                 'Se la Q è alta il filtro è molto piatto',
                 'Se la Q è alta il filtro è molto appuntito (poco piatto)',
-                'Se la Q è alta il filtro di peaking "filtra più frequenze"',
-                'Se la Q è alta il filtro di peaking "filtra meno frequenze"',
+                'Se la Q è alta il filtro di peaking \'filtra più frequenze\'',
+                'Se la Q è alta il filtro di peaking \'filtra meno frequenze\'',
                 'La Q può essere adottata in un filtro semiparametrico, e fissata costante',
                 'La Q può essere adottata in un filtro semiparametrico, e fissata proporzionale a un altro parametro',
                 'La presenza di un valore Q impone che tutti i filtri di peaking siano simmetrici'
             ],
             right: [
-                'La Q è detta "Bandwidth"',
-                'La Q è detta "Quality Factor"',
+                'La Q è detta \'Bandwidth\'',
+                'La Q è detta \'Quality Factor\'',
                 'La Q indica la curtosi del filtro di peaking',
                 'Se la Q è alta il filtro è molto appuntito (poco piatto)',
-                'Se la Q è alta il filtro di peaking "filtra meno frequenze"',
+                'Se la Q è alta il filtro di peaking \'filtra meno frequenze\'',
                 'La Q può essere adottata in un filtro semiparametrico, e fissata costante',
                 'La Q può essere adottata in un filtro semiparametrico, e fissata proporzionale a un altro parametro'
             ]
