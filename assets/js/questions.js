@@ -3029,5 +3029,99 @@ var autovalues = [
             ],
             right: 'scipy.fftpack'
         }
+    ],
+    auto19 = [
+        q1 = {
+            text: 'Cosa sono il nodo e l\'antinodo di un\'onda stazionaria?',
+            answers: [
+                'Il nodo è una zona di equilibrio stabile e l\'antinodo di equilibrio instabile',
+                'Il nodo è una zona a pressione minima e l\'antinodo a pressione massima',
+                'Il nodo è una zona di equilibrio instabile e l\'antinodo di equilibrio stabile',
+                'Il nodo è una zona a pressione massima e l\'antinodo a pressione minima'
+            ],
+            right: [
+                'Il nodo è una zona di equilibrio stabile e l\'antinodo di equilibrio instabile',
+                'Il nodo è una zona a pressione minima e l\'antinodo a pressione massima'
+            ]
+        },
+        q2 = {
+            text: 'Come fu sfruttato il "pop" anomalo del chip SID da parte dei musicisti?',
+            answers: [
+                'Per simulare un "quarto" canale',
+                'Per riprodurre delle note come se fossero suonate da degli strumenti a percussione',
+                'Per riprodurre frequenze non comprese nel range [16,4000] che aveva a disposizione il chip',
+                'Per segnalare errori hardware'
+            ],
+            right: [
+                'Per simulare un "quarto" canale',
+                'Per riprodurre delle note come se fossero suonate da degli strumenti a percussione'
+            ]
+        },
+        q3 = {
+            text: 'Cos\'è il T60?',
+            answers: [
+                'Il tempo in cui l\'energia del suono decade di 60 dB',
+                'Una unità temporale che ha a che fare con i deciBel',
+                'Il tempo occupato da 60 secondi',
+                'Il tempo in cui l\'energia del suono passa dal 100 al 60% di intensità',
+            ],
+            right: [
+                'Il tempo in cui l\'energia del suono decade di 60 dB',
+                'Una unità temporale che ha a che fare con i deciBel'
+            ]
+        },
+        q4 = {
+            text: 'Quali di questi sono gradi della scala diatonica?',
+            answers: [
+                'Tonica',
+                'Dominante',
+                'Maggiore',
+                'Diminuita',
+            ],
+            right: [
+                'Tonica',
+                'Dominante'
+            ]
+        },
+        q5 = {
+            text: 'Il sensore discusso nel progetto 08...',
+            answers: [
+                'è a ultrasuoni',
+                'lavora in un range di distanze [2- 400] cm',
+                'è a infrarossi',
+                'lavora in un range di distanze [2- 400] mm'
+            ],
+            right: [
+                'è a ultrasuoni',
+                'lavora in un range di distanze [2- 400] cm'
+            ]
+        },
+        q6 = {
+            text: 'Quale di questi formati audio è supportato dal tipo SoundFile di Processing?',
+            answers: [
+                'MP3',
+                'AIF/AIFF',
+                'PCM',
+                'FLAC'
+            ],
+            right: [
+                'MP3',
+                'AIF/AIFF'
+            ]
+        },
+        q7 = {
+            text: 'Cosa succede quando una traccia passa attraverso un filtro passa basso?',
+            answers: [
+                'La traccia presenterà in uscita una attenuazione delle frequenze maggiori della frequenza di taglio',
+                'Il condensatore fornisce un percorso verso terra che provoca un\'attenuazione dei segnali a bassa frequenza',
+                'La traccia presenterà in uscita una attenuazione delle frequenze minori della frequenza di Taglio',
+                'Non succede nulla'
+            ],
+            right: [
+                'La traccia presenterà in uscita una attenuazione delle frequenze maggiori della frequenza di taglio',
+                'Il condensatore fornisce un percorso verso terra che provoca un\'attenuazione dei segnali a bassa frequenza'
+            ]
+        }
     ]
+    
 ];

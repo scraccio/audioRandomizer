@@ -15,7 +15,7 @@ function shuffleArray(array){
 function menuButtonOnclick(){
     let arr = document.querySelectorAll('.content-element > input');
     let checked = [];
-    for(let i=0; i<arr.length; i++){
+    for(let i=1; i<arr.length-1; i++){
         if(arr[i].checked){
             checked.push(arr[i].value);
         }
@@ -34,13 +34,32 @@ function menuButtonOnclick(){
         for(let i=0; i<autoArray.length; i++){
             array = array.concat(autovalues[autoArray[i] - 1]);
         }
+        if(arr[arr.length - 1].checked){
+            for(let i=0; i<autovalues[autovalues.length - 1].length; i++){
+                array.push(autovalues[autovalues.length - 1][i]);
+            }
+        }
         data = shuffleArray(array);
         if(len.length != 0){
             data = array.slice(0, parseInt(len));
             createTest();
         }
         else{
-            data = array;
+            createTest();
+        }
+    }
+    else if(arr[arr.length - 1].checked){
+        document.querySelector('.menu-custom').remove();
+        var array = [];
+        for(let i=0; i<autovalues[autovalues.length - 1].length; i++){
+            array.push(autovalues[autovalues.length - 1][i]);
+        }
+        data = shuffleArray(array);
+        if(len.length != 0){
+            data = array.slice(0, parseInt(len));
+            createTest();
+        }
+        else{
             createTest();
         }
     }
@@ -217,7 +236,7 @@ function completeTestButton(){
 
 
     var array = [];
-    for(let i=0; i<autovalues.length; i++){
+    for(let i=0; i<autovalues.length-1; i++){
         array = array.concat(autovalues[i]);
     }
     data = shuffleArray(array);
@@ -226,6 +245,8 @@ function completeTestButton(){
         createTest();
     }
     else{
+        data = array.slice(0, 20);
+        data.push(autovalues[autovalues.length - 1][Math.floor(Math.random() * autovalues[autovalues.length - 1].length)]);
         createTest();
     }
 }
@@ -251,12 +272,34 @@ function customTestButton(){
     menuContent.className = 'menu-content';
     menuCustom.appendChild(menuContent);
 
+    var element = document.createElement('div');
+    element.className = 'content-element';
+    element.innerHTML = '<input type="checkbox" name="elements" value="all">Tutte';
+    element.querySelector('input').onclick = (e)=>{
+        if(e.currentTarget.checked == true){
+            for(let i=1; i<document.querySelectorAll('input').length; i++){
+                document.querySelectorAll('input')[i].checked = true;
+            }
+        }
+        else{
+            for(let i=1; i<document.querySelectorAll('input').length; i++){
+                document.querySelectorAll('input')[i].checked = false;
+            }
+        }
+    }
+    menuContent.appendChild(element);
+
     for(let i=0; i<18; i++){
         var element = document.createElement('div');
         element.className = 'content-element';
         element.innerHTML = '<input type="checkbox" name="elements" value="' + (i+1) + '">' + (i+1);
         menuContent.appendChild(element);
     }
+
+    var element = document.createElement('div');
+    element.className = 'content-element';
+    element.innerHTML = '<input type="checkbox" name="elements" value="bonus">Bonus';
+    menuContent.appendChild(element);
 
     var menuButton = document.createElement('div');
     menuButton.className = 'menu-button';
