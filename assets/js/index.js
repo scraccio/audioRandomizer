@@ -193,7 +193,9 @@ function createTest(){
             else{
                 answer.innerHTML = '<input type="radio" value="' + data[i].answers[j] + '" name="answer-' + (i+1) + '">' + data[i].answers[j];
             }
-            
+            answer.onclick = ()=>{
+                answer.querySelector('input').checked = !answer.querySelector('input').checked;
+            };
             answersDiv.appendChild(answer);
         }
     }
