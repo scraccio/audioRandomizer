@@ -98,8 +98,8 @@ function submitButtonOnclick(){
                 for(let j=0; j<items[i].querySelectorAll('.answer').length; j++){
                     if(items[i].querySelectorAll('.answer')[j].querySelector('input').checked){
                         answers.push(items[i].querySelectorAll('.answer')[j].querySelector('input').value);
-                        items[i].querySelectorAll('.answer')[j].querySelector('input').disabled = true;
                     }
+                    items[i].querySelectorAll('.answer')[j].querySelector('input').disabled = true;
                 }
                 if(answers.length > 0){
                     answers = answers.sort();
