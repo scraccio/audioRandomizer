@@ -2588,7 +2588,7 @@ var autovalues = [
             right: 'Falso'
         },
         q6 = {
-            text: 'Gli standard MPEG garantiscono la retrocompatibilità. Questo significa che è possibile decodificare con MPEG-2 qualcosa codificato con MPEG-4',
+            text: 'Su quali parti degli standard MPEG potrebbe essere necessario pagare delle royalties?',
             answers: [
                 'Obbligatorie',
                 'Libere'
