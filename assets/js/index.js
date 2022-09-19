@@ -143,7 +143,8 @@ function submitButtonOnclick(){
                     }))){
                         score++;
                     }
-                    else if(!Array.isArray(data[i].right) && data[i].right){
+                    else if(!Array.isArray(data[i].right)){
+                        console.log('sus')
                         for(let j=0; j<answers.length; j++){
                             if(answers[j] == data[i].right){
                                 score++;
@@ -152,7 +153,8 @@ function submitButtonOnclick(){
                         }
                         
                     }
-                    else{
+                    
+                    if(score == 0){
                         console.log('Risposta ' + (i+1) + ' errata');
                         $(items[i]).parent()[0].style.backgroundColor = 'rgba(218, 17, 17, 0.1)';
                         items[i].querySelectorAll('.answer').forEach((a)=>{
