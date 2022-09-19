@@ -1,6 +1,8 @@
 var len;
 var data;
 var questionArray = [];
+var currentMode;
+var questionPool = [];
 
 function shuffleArray(array){
     for (var i = array.length - 1; i > 0; i--) {
@@ -14,7 +16,7 @@ function shuffleArray(array){
 
 function menuButtonOnclick(){
     let arr = document.querySelectorAll('.content-element > input');
-    let checked = [];
+    var checked = [];
     for(let i=1; i<arr.length-1; i++){
         if(arr[i].checked){
             checked.push(arr[i].value);
@@ -34,7 +36,9 @@ function menuButtonOnclick(){
         for(let i=0; i<autoArray.length; i++){
             array = array.concat(autovalues[autoArray[i] - 1]);
         }
+        questionPool = array;
         data = shuffleArray(array);
+        currentMode = 'custom';
         if(len.length != 0){
             data = array.slice(0, parseInt(len));
             createTest();
@@ -170,8 +174,9 @@ function submitButtonOnclick(){
 }
 
 function createTest(){
-
-    data = shuffleArray(data);
+    var lastData = data[data.length - 1];
+    data = shuffleArray(data.slice(0, data.length - 1));
+    data.push(lastData);
     for(let i=0; i<data.length; i++){
         let questionDiv = document.createElement('div');
         questionDiv.className = 'question-div';
@@ -250,19 +255,34 @@ function viewSolutions(score, all){
     retakeButton.className = 'retake-div';
     retakeButton.onclick = ()=>{
         document.querySelector('.main-test').innerHTML = '';
-        var array = [];
-        for(let i=0; i<autovalues.length-1; i++){
-            array = array.concat(autovalues[i]);
+
+        if(currentMode == 'complete'){
+            var array = [];
+            for(let i=0; i<autovalues.length-1; i++){
+                array = array.concat(autovalues[i]);
+            }
+            data = shuffleArray(array);
+            if(len.length != 0){
+                data = array.slice(0, parseInt(len));
+                createTest();
+            }
+            else{
+                data = array.slice(0, 20);
+                data.push(autovalues[autovalues.length - 1][Math.floor(Math.random() * autovalues[autovalues.length - 1].length)]);
+                createTest();
+            }
         }
-        data = shuffleArray(array);
-        if(len.length != 0){
-            data = array.slice(0, parseInt(len));
-            createTest();
-        }
-        else{
-            data = array.slice(0, 20);
-            data.push(autovalues[autovalues.length - 1][Math.floor(Math.random() * autovalues[autovalues.length - 1].length)]);
-            createTest();
+
+        if(currentMode == 'custom'){
+            if(len.length != 0){
+                data = shuffleArray(questionPool).slice(0, parseInt(len));
+                createTest();
+            }
+            else{
+                data = shuffleArray(questionPool).slice(0, 20);
+                data.push(autovalues[autovalues.length - 1][Math.floor(Math.random() * autovalues[autovalues.length - 1].length)]);
+                createTest();
+            }
         }
     }
     $(retakeButton).insertBefore(document.querySelector('.question-div'));
@@ -282,12 +302,12 @@ function completeTestButton(){
     mainTest.className = 'main-test';
     document.body.appendChild(mainTest);
 
-
     var array = [];
     for(let i=0; i<autovalues.length-1; i++){
         array = array.concat(autovalues[i]);
     }
     data = shuffleArray(array);
+    currentMode = 'complete';
     if(len.length != 0){
         data = array.slice(0, parseInt(len));
         createTest();
