@@ -3047,13 +3047,13 @@ var autovalues = [
         q2 = {
             text: 'Come fu sfruttato il "pop" anomalo del chip SID da parte dei musicisti?',
             answers: [
-                'Per simulare un "quarto" canale',
+                'Per simulare un \'quarto\' canale',
                 'Per riprodurre delle note come se fossero suonate da degli strumenti a percussione',
                 'Per riprodurre frequenze non comprese nel range [16,4000] che aveva a disposizione il chip',
                 'Per segnalare errori hardware'
             ],
             right: [
-                'Per simulare un "quarto" canale',
+                'Per simulare un \'quarto\' canale',
                 'Per riprodurre delle note come se fossero suonate da degli strumenti a percussione'
             ]
         },

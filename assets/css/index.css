@@ -80,7 +80,7 @@ html, body{
 }
 
 .menu-entry:hover{
-    color: red;
+    color: rgb(103, 58, 153);
 }
 
 .question-div{
@@ -252,5 +252,9 @@ html, body{
 
     .submit-button-text, .retake-text{
         font-size: 3vw;
+    }
+
+    .result-div{
+        font-size: 7vw;
     }
 }

@@ -34,11 +34,6 @@ function menuButtonOnclick(){
         for(let i=0; i<autoArray.length; i++){
             array = array.concat(autovalues[autoArray[i] - 1]);
         }
-        if(arr[arr.length - 1].checked){
-            for(let i=0; i<autovalues[autovalues.length - 1].length; i++){
-                array.push(autovalues[autovalues.length - 1][i]);
-            }
-        }
         data = shuffleArray(array);
         if(len.length != 0){
             data = array.slice(0, parseInt(len));
@@ -98,13 +93,27 @@ function submitButtonOnclick(){
                             console.log('Risposta ' + (i+1) + ' errata');
                             $(items[i]).parent()[0].style.backgroundColor = 'rgba(218, 17, 17, 0.1)';
                             items[i].querySelectorAll('.answer').forEach((a)=>{
-                                if(data[i].right.includes(a.textContent)){
-                                    a.style.color = 'rgb(0, 200, 50)';
-                                    a.style.fontWeight = 'bold';
+                                if(Array.isArray(data[i].right)){
+                                    for(let k=0; k<data[i].right.length; k++){
+                                        if(data[i].right[k] == a.textContent){
+                                            a.style.color = 'rgb(0, 200, 50)';
+                                            a.style.fontWeight = 'bold';
+                                        }
+                                        else{
+                                            a.style.color = 'red';
+                                            a.style.fontWeight = 'bold';
+                                        }
+                                    }
                                 }
                                 else{
-                                    a.style.color = 'red';
-                                    a.style.fontWeight = 'bold';
+                                    if(data[i].right == a.textContent){
+                                        a.style.color = 'rgb(0, 200, 50)';
+                                        a.style.fontWeight = 'bold';
+                                    }
+                                    else{
+                                        a.style.color = 'red';
+                                        a.style.fontWeight = 'bold';
+                                    }
                                 }
                             });
                         }
@@ -122,15 +131,22 @@ function submitButtonOnclick(){
                 }
                 if(answers.length > 0){
                     answers = answers.sort();
-                    data[i].right = data[i].right.sort();
-                    console.log(answers);
-                    console.log(data[i].right);
+                    if(Array.isArray(data[i].right)) data[i].right = data[i].right.sort();
                     if((Array.isArray(answers) && Array.isArray(data[i].right))
                     && (answers.length == data[i].right.length)
                     && (answers.every(function(element, index){
                         return element === data[i].right[index];
                     }))){
                         score++;
+                    }
+                    else if(!Array.isArray(data[i].right) && data[i].right){
+                        for(let j=0; j<answers.length; j++){
+                            if(answers[j] == data[i].right){
+                                score++;
+                                break;
+                            }
+                        }
+                        
                     }
                     else{
                         console.log('Risposta ' + (i+1) + ' errata');
@@ -190,7 +206,7 @@ function createTest(){
                 answer.innerHTML = '<input type="checkbox" value="' + data[i].answers[j] + '" name="answer-' + (i+1) + '"><div class="answer-text">' + data[i].answers[j] + '</div>';
             }
             else{
-                answer.innerHTML = '<input type="radio" value="' + data[i].answers[j] + '" name="answer-' + (i+1) + '"><div class="answer-text">' + data[i].answers[j] + '</div>';
+                answer.innerHTML = '<input type="checkbox" value="' + data[i].answers[j] + '" name="answer-' + (i+1) + '"><div class="answer-text">' + data[i].answers[j] + '</div>';
             }
             answer.querySelector('div').onclick = (e)=>{
                 if(!$(e.currentTarget).parent()[0].querySelector('input').checked){
