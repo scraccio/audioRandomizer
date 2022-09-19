@@ -87,44 +87,6 @@ function submitButtonOnclick(){
     if(countChecked == items.length){
         for(let i=0; i<items.length; i++){
             let type = items[i].querySelector('input').type;
-            if(type == "radio"){
-                for(let j=0; j<items[i].querySelectorAll('.answer').length; j++){
-                    if(items[i].querySelectorAll('.answer')[j].querySelector('input').checked){
-                        if(items[i].querySelectorAll('.answer')[j].querySelector('input').value == data[i].right){
-                            score++;
-                        }
-                        else{
-                            console.log('Risposta ' + (i+1) + ' errata');
-                            $(items[i]).parent()[0].style.backgroundColor = 'rgba(218, 17, 17, 0.1)';
-                            items[i].querySelectorAll('.answer').forEach((a)=>{
-                                if(Array.isArray(data[i].right)){
-                                    for(let k=0; k<data[i].right.length; k++){
-                                        if(data[i].right[k] == a.textContent){
-                                            a.style.color = 'rgb(0, 200, 50)';
-                                            a.style.fontWeight = 'bold';
-                                        }
-                                        else{
-                                            a.style.color = 'red';
-                                            a.style.fontWeight = 'bold';
-                                        }
-                                    }
-                                }
-                                else{
-                                    if(data[i].right == a.textContent){
-                                        a.style.color = 'rgb(0, 200, 50)';
-                                        a.style.fontWeight = 'bold';
-                                    }
-                                    else{
-                                        a.style.color = 'red';
-                                        a.style.fontWeight = 'bold';
-                                    }
-                                }
-                            });
-                        }
-                    }
-                    items[i].querySelectorAll('.answer')[j].querySelector('input').disabled = true;
-                }
-            }
             if(type == "checkbox"){
                 var answers = [];
                 for(let j=0; j<items[i].querySelectorAll('.answer').length; j++){
@@ -134,27 +96,31 @@ function submitButtonOnclick(){
                     items[i].querySelectorAll('.answer')[j].querySelector('input').disabled = true;
                 }
                 if(answers.length > 0){
+                    var found = 0;
                     answers = answers.sort();
                     if(Array.isArray(data[i].right)) data[i].right = data[i].right.sort();
-                    if((Array.isArray(answers) && Array.isArray(data[i].right))
-                    && (answers.length == data[i].right.length)
+                    
+                    if((answers.length == data[i].right.length)
                     && (answers.every(function(element, index){
                         return element === data[i].right[index];
                     }))){
+                        found = 1;
                         score++;
                     }
                     else if(!Array.isArray(data[i].right)){
-                        console.log('sus')
+                        var count = 0;
                         for(let j=0; j<answers.length; j++){
                             if(answers[j] == data[i].right){
                                 score++;
-                                break;
+                                count++;
                             }
                         }
-                        
+                        if(count == answers.length){
+                            found = 1;
+                        }
                     }
-                    
-                    if(score == 0){
+
+                    if(found == 0){
                         console.log('Risposta ' + (i+1) + ' errata');
                         $(items[i]).parent()[0].style.backgroundColor = 'rgba(218, 17, 17, 0.1)';
                         items[i].querySelectorAll('.answer').forEach((a)=>{
