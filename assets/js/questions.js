@@ -2804,7 +2804,7 @@ var autovalues = [
             right: 'Tracce'
         },
         q11 = {
-            text: 'Quale fra i seguenti indica il livello di astrazione per implementare il concetto di partiture e mixing?',
+            text: 'Quale fra i seguenti indica il livello di astrazione per implementare il concetto di timbro?',
             answers: [
                 'Sequencer',
                 'Canali',
