@@ -280,7 +280,6 @@ function viewSolutions(score, all){
             }
             else{
                 data = shuffleArray(questionPool).slice(0, 20);
-                data.push(autovalues[autovalues.length - 1][Math.floor(Math.random() * autovalues[autovalues.length - 1].length)]);
                 createTest();
             }
         }
