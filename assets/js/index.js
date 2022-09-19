@@ -53,6 +53,7 @@ function menuButtonOnclick(){
         for(let i=0; i<autovalues[autovalues.length - 1].length; i++){
             array.push(autovalues[autovalues.length - 1][i]);
         }
+        questionPool = array;
         data = shuffleArray(array);
         if(len.length != 0){
             data = array.slice(0, parseInt(len));
@@ -99,9 +100,8 @@ function submitButtonOnclick(){
                     var found = 0;
                     answers = answers.sort();
                     if(Array.isArray(data[i].right)) data[i].right = data[i].right.sort();
-                    
-                    if((answers.length == data[i].right.length)
-                    && (answers.every(function(element, index){
+
+                    if((answers.length == data[i].right.length) && (answers.every(function(element, index){
                         return element === data[i].right[index];
                     }))){
                         found = 1;
