@@ -114,23 +114,37 @@ function submitButtonOnclick(){
                                 score++;
                                 count++;
                             }
-                        }
+                        } 
                         if(count == answers.length){
                             found = 1;
                         }
                     }
 
                     if(found == 0){
-                        console.log('Risposta ' + (i+1) + ' errata');
+                        //console.log('Risposta ' + (i+1) + ' errata');
+                        console.log(data[i].right);
                         $(items[i]).parent()[0].style.backgroundColor = 'rgba(218, 17, 17, 0.1)';
                         items[i].querySelectorAll('.answer').forEach((a)=>{
-                            if(data[i].right.includes(a.textContent)){
-                                a.style.color = 'rgb(0, 200, 50)';
-                                a.style.fontWeight = 'bold';
+                            var count = 0;
+
+                            if(Array.isArray(data[i].right)){
+                                for(let j=0; j<data[i].right.length; j++){
+                                    if(a.querySelector('.answer-text').textContent == data[i].right[j]){
+                                        count++;
+                                        break;
+                                    }
+                                }
+                            }
+                            else if(a.querySelector('.answer-text').textContent == data[i].right){
+                                count++;
+                            }
+                            if(count != 0){
+                                a.querySelector('.answer-text').style.color = 'rgb(0, 200, 50)';
+                                a.querySelector('.answer-text').style.fontWeight = 'bold';
                             }
                             else{
-                                a.style.color = 'red';
-                                a.style.fontWeight = 'bold';
+                                a.querySelector('.answer-text').style.color = 'red';
+                                a.querySelector('.answer-text').style.fontWeight = 'bold';
                             }
                         });
                     }
@@ -311,7 +325,7 @@ function customTestButton(){
     element.className = 'content-element';
     element.innerHTML = '<input type="checkbox" name="elements" value="all">Tutte';
     element.onclick = (e)=>{
-        if(e.currentTarget.checked == true){
+        if(document.querySelectorAll('input')[0].checked == true){
             for(let i=1; i<document.querySelectorAll('input').length; i++){
                 document.querySelectorAll('input')[i].checked = true;
             }
@@ -352,7 +366,7 @@ function homeButton(){
         document.querySelector('.main-test').remove();
         document.body.innerHTML += `<div class="main">
                                         <div class="title">Benvenuto.<br>Seleziona una modalità:</div>
-                                        <div class="menu-entry2">Inserisci il numero di domande</div>
+                                        <div class="menu-entry2">Inserisci il numero di domande<br>(default: 20 + bonus)</div>
                                             <div contenteditable="true" class="cell"></div>
                                         <div class="menu">
                                             <div class="menu-entry">Genera un test completo</div>
